@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 
 export const HeaderWapper = styled.div`
-  position:relative;
+  z-index:1;
+  position:fixed;
   background-color:#F5F4F4;
   height:56px;
-  width:auto;
+  width:100%;
   border-bottom: 1px solid #f0f0f0;
   box-shadow:0 4px 8px 0 rgba(7, 17, 27, 0.1);
 
