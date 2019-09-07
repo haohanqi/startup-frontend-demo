@@ -9,9 +9,10 @@ class index extends Component {
         return (
             <div>
 
-                <ProductInfor></ProductInfor>
+                
                 <Summary></Summary>
                 <Cata></Cata>
+                <ProductInfor></ProductInfor>
                 
             </div>
         );

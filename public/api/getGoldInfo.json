@@ -1,0 +1,39 @@
+{
+
+    "success":true,
+    "data": [
+        {
+
+          "productName": "Gold",
+          "ID":"#12323",
+          "price":" $89 / kg ",
+          "quantity":" 100 kg ",
+          "location":"Canada--ON--Toronto"
+        },
+        {
+            "productName": "Gold",
+            "ID":"#12324",
+            "price":" $89 / kg ",
+            "quantity":" 100 kg ",
+            "location":"Canada--ON--Toronto"
+        },
+          
+        {
+            "productName": "Gold",
+            "ID":"#12223",
+            "price":" $89 / kg ",
+            "quantity":" 100 kg ",
+            "location":"Canada--ON--Toronto"
+        },
+          
+        {
+            "productName": "Gold",
+            "ID":"#11323",
+            "price":" $89 / kg ",
+            "quantity":" 100 kg ",
+            "location":"Canada--ON--Toronto"
+        }
+
+
+]
+}

@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 export const HeaderWapper = styled.div`
   z-index:1;
-  position:fixed;
+  position:absolyte;
+  top:0;
+  left:0;
   background-color:#F5F4F4;
   height:56px;
   width:100%;

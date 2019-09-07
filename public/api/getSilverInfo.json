@@ -1,0 +1,38 @@
+{
+
+    "success":true,
+    "data": [
+        {
+          "productName": "Silver",
+          "ID":"#22323",
+          "price":" $89 / kg ",
+          "quantity":" 100 kg ",
+          "location":"Canada--ON--Toronto"
+        },
+        {
+            "productName": "Silver",
+            "ID":"#22324",
+            "price":" $89 / kg ",
+            "quantity":" 100 kg ",
+            "location":"Canada--ON--Toronto"
+        },
+          
+        {
+            "productName": "Silver",
+            "ID":"#22223",
+            "price":" $89 / kg ",
+            "quantity":" 100 kg ",
+            "location":"Canada--ON--Toronto"
+        },
+          
+        {
+            "productName": "Silver",
+            "ID":"#21323",
+            "price":" $89 / kg ",
+            "quantity":" 100 kg ",
+            "location":"Canada--ON--Toronto"
+        }
+
+
+]
+}
