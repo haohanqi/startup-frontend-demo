@@ -1,88 +1,75 @@
 import axios from 'axios'
-import  * as actionTypes  from './actionType'
+import * as actionTypes from './actionType'
 
 
-const setInfo =(data,target)=>{
-    if(target==="Gold"){
+const setInfo = (data, target) => {
+    if (target === "Gold") {
         return {
-            type:actionTypes.SET_GOLDINFO,
+            type: actionTypes.SET_GOLDINFO,
             data
         }
     }
-    if(target==="Silver"){
+    if (target === "Silver") {
         return {
-            type:actionTypes.SET_SILVERINFO,
+            type: actionTypes.SET_SILVERINFO,
             data
         }
     }
-    if(target==="Copper"){
+    if (target === "Copper") {
         return {
-            type:actionTypes.SET_COPPERINFO,
+            type: actionTypes.SET_COPPERINFO,
             data
         }
     }
-    if(target==="Zinc"){
+    if (target === "Zinc") {
         return {
-            type:actionTypes.SET_ZINCINFO,
+            type: actionTypes.SET_ZINCINFO,
             data
         }
-    }   
+    }
 }
 
-/* const asyncGet=(url,dispatch)=>{
+const asyncGet = (url, target, dispatch) => {
     axios.get(url).then(
-        (res)=>{
-            const data =res.data.data
-            const target="Gold"
+        (res) => {
+            const data = res.data.data
             console.log(data)
-            dispatch(setInfo(data,target))
+            dispatch(setInfo(data, target))
         }
-     ).catch(
-         (error)=>{
-             console.log(error)
-         }
-     )
-
-} */
-
-export const getGoldInfo =()=>{
-   return (dispatch)=>{
-       axios.get('/api/getGoldInfo.json').then(
-          (res)=>{
-              const data =res.data.data
-              const target="Gold"
-              console.log(data)
-              dispatch(setInfo(data,target))
-          }
-       ).catch(
-           (error)=>{
-               console.log(error)
-           }
-       )
-   }
+    ).catch(
+        (error) => {
+            console.log(error)
+        }
+    )
 
 }
 
-export const getSilverInfo =()=>{
-    return (dispatch)=>{
-        axios.get('/api/getSilverInfo.json').then(
-           (res)=>{
-               const data =res.data.data
-               const target="Gold"
-               console.log(data)
-               dispatch(setInfo(data,target))
-           }
-        ).catch(
-            (error)=>{
-                console.log(error)
-            }
-        )
-    }
- 
- }
+export const getInfo = (target) => {
+    return (dispatch) => {
 
-export const setTarget=(target)=>{
-    return{
+        if (target === "Gold") {
+            asyncGet('/api/getGoldInfo.json', target, dispatch)
+        }
+
+        if (target === 'Silver') {
+            asyncGet('/api/getSilverInfo.json', target, dispatch)
+        }
+
+        if (target === "Copper") {
+            asyncGet('/api/getCopperInfo.json', target, dispatch)
+        }
+
+        if (target === 'Zinc') {
+            asyncGet('/api/getZincInfo.json', target, dispatch)
+        }
+
+    }
+
+}
+
+
+export const setTarget = (target) => {
+    return {
         type: actionTypes.SET_TARGET,
         target
     }

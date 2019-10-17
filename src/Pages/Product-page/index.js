@@ -5,15 +5,14 @@ import Cata from './components/Cata'
 
 
 class index extends Component {
+    
+        
     render() {
         return (
             <div>
-
-                
                 <Summary></Summary>
                 <Cata></Cata>
                 <ProductInfor></ProductInfor>
-                
             </div>
         );
     }

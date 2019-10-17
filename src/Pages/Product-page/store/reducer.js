@@ -1,13 +1,11 @@
 import * as actionTypes from './actionType'
 import {fromJS} from 'immutable'
 const defaultState=fromJS({
-
     target:" ",
-    gold:[],
-    silver:[],
-    copper:[],
-    zinc:[]
-  
+    gold:[ ],
+    silver:[ ],
+    copper:[ ],
+    zinc:[ ]
 })
 
 export default(state=defaultState,action)=>{
@@ -22,6 +20,14 @@ export default(state=defaultState,action)=>{
 
     if(action.type===actionTypes.SET_SILVERINFO){
       return state.set('silver',action.data)
+    }
+
+    if(action.type===actionTypes.SET_COPPERINFO){
+      return state.set('copper',action.data)
+    }
+
+    if(action.type===actionTypes.SET_ZINCINFO){
+      return state.set('zinc',action.data)
     }
 
     return state;

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import {CataWapper,CataInfo} from '../style.js'
 import { connect } from 'react-redux';
-import {getGoldInfo,setTarget,getSilverInfo} from '../store/actionCreator'
+import {getInfo,setTarget} from '../store/actionCreator'
 
 class Cata extends Component {
     constructor(props){
         super(props)
         this.handleButtonClick=this.handleButtonClick.bind(this);
-
     }
     render() {
         return (
@@ -26,44 +25,48 @@ class Cata extends Component {
     }
 
     handleButtonClick(e){
-      //According to the target value, call different get method
+      const {Gold,Silver,Copper,Zinc,setTarget,getInfo}=this.props
       const target = e.target.textContent
-      if(target === 'Gold'){
+      setTarget(e.target.textContent)
+      //According to the target value, call different get method
+      if(target === 'Gold' && Gold.size===0){
           console.log("call getGold method")
-          this.props.setTarget(e.target.textContent)
-          this.props.getGoldInfo()
-
+          getInfo(target)
       }
-      if(target === 'Silver'){
+      if(target === 'Silver'&& Silver.size===0){
         console.log("call getSilver method")
-        this.props.setTarget(e.target.textContent)
-        this.props.getSilverInfo()
-
-
+        this.props.getInfo(target)
       }
-      if(target === 'Copper'){
+      if(target === 'Copper'&& Copper.size===0){
         console.log("call getCopper method")
-        this.props.setTarget(e.target.textContent)
+        this.props.getInfo(target)
+
       }
-      if(target === 'Zinc'){
+      if(target === 'Zinc'&& Zinc.size===0){
         console.log("call getZinc method")
-        this.props.setTarget(e.target.textContent)
+        this.props.getInfo(target)
       }
-
-
     }
         
  }
 
+ const mapStateToProps=(state)=>{
+   return{
+
+    Gold:state.get('product').get('gold'),
+    Silver:state.get('product').get('silver'),
+    Copper:state.get('product').get('copper'),
+    Zinc:state.get('product').get('zinc')
+
+   }
+ }
+
  const mapDispatchToProps = {
-     getGoldInfo,
-     getSilverInfo,
-     setTarget,
-
-
+     getInfo,
+     setTarget
  }
 
 
 
 
-export default connect(null,mapDispatchToProps)(Cata);
+export default connect(mapStateToProps,mapDispatchToProps)(Cata);

@@ -12,7 +12,7 @@ padding-top:20px;
 padding-bottom:20px;
 padding-left:10px;
 padding-right:10px;
-
+cursor:default;
 box-shadow: 3px 3px 3px 3px rgba(170,170,170,0.5);
 border-radius: 5px;
 font-size: 20px;
@@ -59,7 +59,8 @@ width: 1000px;
 border:1px solid #d4d4d4;
 border-radius: 5px;
 box-shadow: 3px 3px 3px 3px rgba(170,170,170,0.5);
-background-color: #F5F4F4
+background-color: #F5F4F4;
+cursor:default;
 .marketPlaces{
     margin-top:20px;
     margin-left:30px;
@@ -90,6 +91,7 @@ background-color:#fff;
     border-bottom: 1px solid #d4d4d4;
     transition: all 0.3s ease-in;
     :hover{
+        border-bottom: 2px solid #009a44;
         font-size:22px;
         color:#009a44;
     }
@@ -106,8 +108,9 @@ box-shadow: 3px 3px 3px 3px rgba(170,170,170,0.5);
 font-size: 40px;
 text-align:center;
 line-height:80px;
-transition: all 0.3s ease;
+transition: all 0.5s ease;
 :hover{
+    border:1px solid #009a44;
     font-size:45px;
     color:#009a44;
 }
@@ -121,22 +124,23 @@ top: 380px;
 left:500px;
 height:1200px;
 width: 718px;
+cursor:default;
   .fade-enter {
     opacity: 0;
   }
   
   .fade-enter.fade-enter-active {
     opacity: 1;
-    transition: opacity 3000ms ease;
+    transition: opacity 3000ms ease-in;
   }
   
   .fade-leave {
-    opacity: 1;
+    opacity: 0.5;
   }
   
   .fade-leave.fade-leave-active {
     opacity: 0;
-    transition: opacity 3000ms ease;
+    transition: opacity 3000ms ease-out;
   }
 
 `
@@ -181,9 +185,11 @@ span{
     font-size:25px;
     font-weight:700;
     transition: all 0.3s ease;
+
     :hover{
         color:#009a44;
         font-size:28px;
+        border-bottom: 2px solid#009a44;
     }
 }
 

@@ -20,12 +20,13 @@ top:0;
 left:0;
 height:56px;
 width:120px;
+transition: all 0.3s ease;
 :hover{
   background-color:#DFDEDE
 }
 `
 
-export const Pages = styled.div`
+export const PagesWapper = styled.div`
 position:relative;
 overflow:auto;
 float:right
@@ -33,15 +34,18 @@ height:56px;
 width:360px;
 `
 
-export const About = styled.div`
+export const Page = styled.div`
 position:relative;
 float: left;
 height:56px;
 width:100px;
+margin-left:10px;
+margin-right:10px;
 text-align:center;
 line-height:50px;
 font-size:18px;
 color: #716E6E
+transition: all 0.4s ease;
 :hover{
   background-color:#DFDEDE
   font-size:20px;
@@ -49,36 +53,3 @@ color: #716E6E
 }
 `
 
-export const Product = styled.div`
-position:relative;
-margin-left: 30px;
-float: left;
-height:56px;
-width:100px;
-text-align:center;
-line-height:50px;
-font-size:18px;
-color: #716E6E
-:hover{
-  background-color:#DFDEDE
-  font-size:20px;
-  color:#3E3D3D
-}
-`
-
-export const Login = styled.div`
-position:relative;
-margin-left: 30px;
-float: left;
-height:56px;
-width:100px;
-text-align:center;
-line-height:50px;
-font-size:18px;
-color: #716E6E
-:hover{
-  background-color:#DFDEDE
-  font-size:20px;
-  color:#3E3D3D
-}
-`

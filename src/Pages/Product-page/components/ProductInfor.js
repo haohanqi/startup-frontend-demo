@@ -1,70 +1,83 @@
 import React, { Component } from 'react';
 import {ProductInforWapper,Product} from '../style'
 import {connect} from 'react-redux'
+import { Link } from 'react-router-dom';
+import {getInfo,setTarget} from '../store/actionCreator'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class ProductInfor extends Component {
     constructor(props){
         super(props)
         this.renderProductList=this.renderProductList.bind(this);
-        this.productList=this.productList.bind(this);
+        this.productList=this.productItem.bind(this);
     }
+
+    componentDidMount(){
+        this.props.setTarget('Gold')
+        this.props.getInfo('Gold')
+
+    }
+    
     render() {
 
         return (
             <ProductInforWapper>
-
-            <ReactCSSTransitionGroup
-            transitionName="fade"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={300}
-            >
+           
             {
                 this.renderProductList(this.props.target)
             } 
-            </ReactCSSTransitionGroup>
-                         
+                       
             </ProductInforWapper>
         );
     }
 
     
     renderProductList(target){
+       const {Gold,Silver,Copper,Zinc}=this.props
        console.log(target)
        if(target==='Gold'){
-        return this.props.Gold.map((item)=>{
-           return  this.productList(item)
+        return Gold.map((item)=>{
+           return this.productItem(item)
         })
        }
        if(target==='Silver'){
-        return this.props.Gold.map((item)=>{
-            return this.productList(item)
+        return Silver.map((item)=>{
+            return this.productItem(item)
          })
        }
-       if(target==='Copper'){
-        return this.props.Gold.map((item)=>{
-            return this.productList(item)
+       if(target==='Copper' ){
+        console.log(Copper)
+        return Copper.map((item)=>{
+            return this.productItem(item)
          })
        }
        if(target==='Zinc'){
-        return this.props.Gold.map((item)=>{
-            return this.productList(item)
+        return Zinc.map((item)=>{
+            return this.productItem(item)
          })
        }
-
     }
 
-    productList(item){
-        return (
-            
+    productItem(item){
+        return (    
+            <Link to='/productDetail' style={{ textDecoration: 'none' }}>
+           
+           <ReactCSSTransitionGroup
+            transitionName="fade"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={300}
+            >
             <Product key={item.ID}>
-                <div className='productName'>Product Name: {item.productName}</div>
+                <div className='productName'>Product: {item.productName}</div>
                 <div className='ID'>ID: <span>{item.ID}</span></div>
                 <div className='price'>Price: <span> {item.price}</span> </div>
                 <div className='quantity'>Quantity: <span> {item.quantity}</span> </div>
                 <div className='location'> Location: <span>{item.location}</span> </div>
-            </Product>
-           
+            </Product>  
+
+            </ReactCSSTransitionGroup>
+        
+           </Link>   
         )
     }
         
@@ -74,8 +87,16 @@ const mapStateToProps=(state)=>{
     return{
        target:state.get('product').get('target'),
        Gold:state.get('product').get('gold'),
-       Silver:state.get('product').get('silver')
+       Silver:state.get('product').get('silver'),
+       Copper:state.get('product').get('copper'),
+       Zinc:state.get('product').get('zinc')
     }
 }
 
-export default connect(mapStateToProps)(ProductInfor);
+const mapDispatchToProps={
+    setTarget,
+    getInfo
+
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(ProductInfor);

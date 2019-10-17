@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {HeaderWapper,Logo,Pages, About,Product,Login} from './style'
-
+import {HeaderWapper,Logo,PagesWapper, Page} from './style'
+import { Link } from 'react-router-dom';
 
 class index extends Component {
     render() {
@@ -8,13 +8,13 @@ class index extends Component {
             
             <HeaderWapper>
             
-              <Logo></Logo>
+              <Link to='/'><Logo></Logo></Link>
               
-              <Pages>
-                <About>About</About>
-                <Product>Product</Product>
-                <Login>Login</Login>
-              </Pages>
+              <PagesWapper>
+                <Link to='/'><Page>About</Page></Link>
+                <Link to='/product'><Page>Product</Page></Link>
+                <Link to='/login'><Page>Login</Page></Link>
+              </PagesWapper>
               
             </HeaderWapper>
             
