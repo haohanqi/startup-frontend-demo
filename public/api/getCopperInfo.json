@@ -6,6 +6,7 @@
 
           "productName": "Copper",
           "ID":"#42323",
+          "Standard":"LME",
           "price":" $100 / kg ",
           "quantity":" 100 kg ",
           "location":"Canada--ON--Toronto"
@@ -13,6 +14,7 @@
         {
             "productName": "Copper",
             "ID":"#52324",
+            "Standard":"LME",
             "price":" $200 / kg ",
             "quantity":" 100 kg ",
             "location":"Canada--ON--Toronto"
@@ -21,6 +23,7 @@
         {
             "productName": "Copper",
             "ID":"#42223",
+            "Standard":"LME",
             "price":" $120/ kg ",
             "quantity":" 100 kg ",
             "location":"Canada--ON--Toronto"
@@ -29,6 +32,7 @@
         {
             "productName": "Copper",
             "ID":"#41323",
+            "Standard":"LME",
             "price":" $22.32 / kg ",
             "quantity":" 100 kg ",
             "location":"Canada--ON--Toronto"

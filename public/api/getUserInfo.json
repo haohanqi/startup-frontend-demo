@@ -1,0 +1,14 @@
+{
+    "success":true,
+    "data":{
+        "companyName":"moken exchange",
+        "location":"Toronto",
+        "companyProduct":["Copper","Zinc","Alum"],
+        "companyWebsite":"www.mokenExchange.com",
+        "phoneNumber":"6478295577",
+        "email":"haohanqiharry@gmail.com",
+        "faxNumber":"6478295577",
+        "totalTrans":10,
+        "rate":"good"
+    }
+}

@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
 import {ProductDetailWapper,ProductDetailHeader,ProductDetailInfoWapper,ProductInfoDetail} from '../style'
 import { connect } from 'react-redux';
-import {setuseridFocused} from '../store/actionCreator'
+import {setuseridFocused,getProductInfo} from '../store/actionCreator'
 
 class ProductDetailInfo extends Component {
     constructor(props){
         super(props)
         this.handleClick=this.handleClick.bind(this)
     }
+
+    componentDidMount(){
+        this.props.getProductInfo()
+    }
+    
     render() {
+        const {productInfo} = this.props
+        console.log(productInfo)
         return (
             <ProductDetailWapper>
                 <ProductDetailHeader>
-                    <div className='productName'>Product:<span>Gold</span></div>
-                    <div className='postBy' title='Click to see user information'  onClick={this.handleClick}>Post By:<span>User #33128</span></div>
-                    <div className='type'>Type: <span>Selling</span></div>
-                    <div className='contactStatus'> Contract Status: <span>Open</span></div>
+                    <div className='productName'>Product:<span>{productInfo.product}</span></div>
+                    <div className='postBy' title='Click to see user information'  onClick={this.handleClick}>Post By:<span>User # {productInfo.postBy}</span></div>
+                    <div className='type'>Type: <span>{productInfo.type}</span></div>
+                    <div className='contactStatus'> Contract Status: <span>{productInfo.status}</span></div>
                 </ProductDetailHeader>
 
                 <ProductDetailInfoWapper>
@@ -51,20 +58,18 @@ class ProductDetailInfo extends Component {
 
     handleClick(){
         this.props.setuseridFocused('true')
-
     }
 }
 
 const mapDispatchToProps={
 setuseridFocused,
+getProductInfo
 
 }
 
 const mapStateToProps=(state)=>{
     return{
-
-
-
+        productInfo:state.get('productDetail').get('productInfo')
     }
 }
 

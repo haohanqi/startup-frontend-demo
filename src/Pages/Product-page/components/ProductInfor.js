@@ -69,7 +69,7 @@ class ProductInfor extends Component {
             >
             <Product key={item.ID}>
                 <div className='productName'>Product: {item.productName}</div>
-                <div className='ID'>ID: <span>{item.ID}</span></div>
+                <div className='ID'>Standard: <span>{item.Standard}</span></div>
                 <div className='price'>Price: <span> {item.price}</span> </div>
                 <div className='quantity'>Quantity: <span> {item.quantity}</span> </div>
                 <div className='location'> Location: <span>{item.location}</span> </div>
