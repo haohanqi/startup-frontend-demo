@@ -15,10 +15,11 @@ export const setuseridFocused=(data)=>{
     }
 }
 
-export const getUserInfo = () =>{
+export const getUserInfo = (id) =>{
+    console.log(id)
    return (dispatch)=>{
     axios.get('/api/getUserInfo.json').then((res)=>{
-        console.log(res.data.data)
+       // console.log(res.data.data)
         dispatch(setUserInfo(res.data.data))
     }).catch((error)=>{console.log(error)})
    }
@@ -32,7 +33,8 @@ const setProductInfo = (data) =>{
     }
 }
 
-export const getProductInfo =()=>{
+export const getProductInfo =(target,id)=>{
+    console.log('/'+target+'/'+id)
     return (dispatch) =>{
         axios.get('/api/getProductInfo.json').then((res)=>{
             console.log(res.data.data)

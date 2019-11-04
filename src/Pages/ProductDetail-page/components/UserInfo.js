@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import {UserInfoWapper,InfoWapper,Tag} from '../style'
-import {getUserInfo} from '../store/actionCreator'
 import {connect} from 'react-redux'
 class UserInfo extends Component {
-    componentDidMount(){
-        this.props.getUserInfo()
-    }
+    
     render() {
         const {focused,userInfo}=this.props;
-        console.log(focused)
-        console.log(userInfo.companyProduct)
-    
-        return (
-       
         
+        return (
+               
             <UserInfoWapper className={focused ? '': 'hidden'} >
                <div className='userID'> User ID: <span>#33128</span> </div>
                
@@ -50,24 +44,13 @@ class UserInfo extends Component {
             </UserInfoWapper>
         );
     }
-
-
-
-    
 }
 
 const mapStatetoProps=(state)=>{
     return {
-      
         focused: state.get('productDetail').get('useridFocus'),
         userInfo:state.get('productDetail').get('userInfo')
-
     }
 }
 
-const mapDispatchToProps ={
-    getUserInfo
-
-}
-
-export default connect(mapStatetoProps,mapDispatchToProps) (UserInfo);
+export default connect(mapStatetoProps) (UserInfo);

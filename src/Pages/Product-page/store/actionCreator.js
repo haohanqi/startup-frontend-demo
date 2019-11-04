@@ -33,7 +33,7 @@ const asyncGet = (url, target, dispatch) => {
     axios.get(url).then(
         (res) => {
             const data = res.data.data
-            console.log(data)
+            //console.log(data)
             dispatch(setInfo(data, target))
         }
     ).catch(

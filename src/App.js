@@ -16,7 +16,7 @@ function App() {
       <div>
       <Header></Header>
       <Route path='/product' exact component={ProductPage}></Route>
-      <Route path='/productDetail' exact component={ProductDetailInfo}></Route>
+      <Route path='/productDetail/:pid/:uid' exact component={ProductDetailInfo}></Route>
       </div>
     </BrowserRouter>
     </Provider>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+import {getInfo,setTarget} from './store/actionCreator'
 import ProductInfor from './components/ProductInfor'
 import Summary from './components/Summary'
 import Cata from './components/Cata'
@@ -6,6 +8,11 @@ import Cata from './components/Cata'
 
 class index extends Component {
     
+    componentDidMount(){
+        //main page defualtly render Copper list
+        this.props.setTarget('Copper')
+        this.props.getInfo('Copper')
+    }
         
     render() {
         return (
@@ -18,4 +25,9 @@ class index extends Component {
     }
 }
 
-export default index;
+
+const mapDispathctoProps={
+    setTarget,getInfo
+}
+
+export default connect(null,mapDispathctoProps)(index);

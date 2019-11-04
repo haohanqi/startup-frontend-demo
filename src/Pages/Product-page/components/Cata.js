@@ -23,28 +23,28 @@ class Cata extends Component {
             
         );
     }
-
+    
+    //Click different catas, set differnet target. According to different target value, call each get method.
     handleButtonClick(e){
+      
       const {Gold,Silver,Copper,Zinc,setTarget,getInfo}=this.props
-      const target = e.target.textContent
+
+      //get target from cata's name
+      const target = e.target.textContent 
       setTarget(e.target.textContent)
-      //According to the target value, call different get method
-      if(target === 'Gold' && Gold.size===0){
-          console.log("call getGold method")
-          getInfo(target)
+     
+      //Only request getInfo at first time. If specific cata has already been request, no need to request agian. 
+      if(target === 'Gold' && Gold.size===0){    
+        getInfo(target)
       }
       if(target === 'Silver'&& Silver.size===0){
-        console.log("call getSilver method")
-        this.props.getInfo(target)
+        getInfo(target)
       }
       if(target === 'Copper'&& Copper.size===0){
-        console.log("call getCopper method")
-        this.props.getInfo(target)
-
+        getInfo(target)
       }
       if(target === 'Zinc'&& Zinc.size===0){
-        console.log("call getZinc method")
-        this.props.getInfo(target)
+        getInfo(target)
       }
     }
         
@@ -62,7 +62,7 @@ class Cata extends Component {
  }
 
  const mapDispatchToProps = {
-     getInfo,
+     getInfo, 
      setTarget
  }
 

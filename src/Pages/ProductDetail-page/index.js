@@ -3,14 +3,23 @@ import React, { Component } from 'react';
 import UserInfo from './components/UserInfo'
 import ProductDetailInfo from './components/ProductDetailInfo'
 import {connect} from 'react-redux'
-import {getUserInfo} from './store/actionCreator'
+import {getUserInfo,getProductInfo} from './store/actionCreator'
 class index extends Component {
+
+    componentDidMount(){
+        const  {getProductInfo,target,getUserInfo,match} = this.props
+        //get product information by pid  
+        getProductInfo(target,match.params.pid)
+        //get user information by uid 
+        getUserInfo(match.params.uid)
+    }
     
     render() {
+        console.log(this.props)
         return (
             <div>
-               <UserInfo/>
-               <ProductDetailInfo/>
+               <UserInfo />
+               <ProductDetailInfo />
                 
             </div>
         );
@@ -18,7 +27,14 @@ class index extends Component {
 }
 
 const mapDispatchToProps ={
-    getUserInfo
+    getUserInfo,getProductInfo
 }
 
-export default connect(null,mapDispatchToProps)(index);
+const mapStatetoProps=(state)=>{
+    return{
+        target:state.get('product').get('target')
+    }
+     
+}
+
+export default connect(mapStatetoProps,mapDispatchToProps)(index);

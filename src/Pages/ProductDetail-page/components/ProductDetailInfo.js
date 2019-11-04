@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {ProductDetailWapper,ProductDetailHeader,ProductDetailInfoWapper,ProductInfoDetail} from '../style'
 import { connect } from 'react-redux';
-import {setuseridFocused,getProductInfo} from '../store/actionCreator'
+import {setuseridFocused} from '../store/actionCreator'
 
 class ProductDetailInfo extends Component {
     constructor(props){
@@ -9,15 +9,14 @@ class ProductDetailInfo extends Component {
         this.handleClick=this.handleClick.bind(this)
     }
 
-    componentDidMount(){
-        this.props.getProductInfo()
-    }
+    
     
     render() {
         const {productInfo} = this.props
         console.log(productInfo)
         return (
             <ProductDetailWapper>
+                
                 <ProductDetailHeader>
                     <div className='productName'>Product:<span>{productInfo.product}</span></div>
                     <div className='postBy' title='Click to see user information'  onClick={this.handleClick}>Post By:<span>User # {productInfo.postBy}</span></div>
@@ -30,11 +29,11 @@ class ProductDetailInfo extends Component {
                    <div className='title'>Product Summary</div>
                    
                    <ProductInfoDetail>
-                   <div className='quantity'>Quantity: <span>100 kg</span></div>
-                   <div className='quality'>Quality: <span>90%</span></div>
-                   <div className='price'>Price: <span>120 $ / kg</span></div>
-                   <div className='total'>Total Deal Value: <span> 12000 $</span></div>
-                   <div className='deliver'>Deliver Option: <span>Land Transportation</span></div>
+                        <div className='quantity'>Quantity: <span>100 kg</span></div>
+                        <div className='quality'>Quality: <span>90%</span></div>
+                        <div className='price'>Price: <span>120 $ / kg</span></div>
+                        <div className='total'>Total Deal Value: <span> 12000 $</span></div>
+                        <div className='deliver'>Deliver Option: <span>Land Transportation</span></div>
                    </ProductInfoDetail>
 
                 </ProductDetailInfoWapper>
@@ -46,7 +45,6 @@ class ProductDetailInfo extends Component {
                    <ProductInfoDetail>
                    <div className='downpayment'>Downpayment: <span>10 % of total deal value</span></div>
                    <div className='deliverRange'>Deliver Range: <span>North America</span></div>
-
                    </ProductInfoDetail>
 
                 </ProductDetailInfoWapper>
@@ -56,6 +54,7 @@ class ProductDetailInfo extends Component {
         );
     }
 
+    //click on user id field, show user information 
     handleClick(){
         this.props.setuseridFocused('true')
     }
@@ -63,13 +62,11 @@ class ProductDetailInfo extends Component {
 
 const mapDispatchToProps={
 setuseridFocused,
-getProductInfo
-
 }
 
 const mapStateToProps=(state)=>{
     return{
-        productInfo:state.get('productDetail').get('productInfo')
+        productInfo:state.get('productDetail').get('productInfo'),
     }
 }
 

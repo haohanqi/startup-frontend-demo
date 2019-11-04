@@ -2,21 +2,10 @@ import React, { Component } from 'react';
 import {ProductInforWapper,Product} from '../style'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom';
-import {getInfo,setTarget} from '../store/actionCreator'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class ProductInfor extends Component {
-    constructor(props){
-        super(props)
-        this.renderProductList=this.renderProductList.bind(this);
-        this.productList=this.productItem.bind(this);
-    }
-
-    componentDidMount(){
-        this.props.setTarget('Gold')
-        this.props.getInfo('Gold')
-
-    }
+    
     
     render() {
 
@@ -24,7 +13,7 @@ class ProductInfor extends Component {
             <ProductInforWapper>
            
             {
-                this.renderProductList(this.props.target)
+               this.renderProductList(this.props.target)
             } 
                        
             </ProductInforWapper>
@@ -34,7 +23,7 @@ class ProductInfor extends Component {
     
     renderProductList(target){
        const {Gold,Silver,Copper,Zinc}=this.props
-       console.log(target)
+
        if(target==='Gold'){
         return Gold.map((item)=>{
            return this.productItem(item)
@@ -60,17 +49,18 @@ class ProductInfor extends Component {
 
     productItem(item){
         return (    
-            <Link to='/productDetail' style={{ textDecoration: 'none' }}>
+            <Link to={'/productDetail/'+item.ID+'/'+item.postBy} style={{ textDecoration: 'none' }}>
            
            <ReactCSSTransitionGroup
             transitionName="fade"
             transitionEnterTimeout={500}
             transitionLeaveTimeout={300}
             >
+            
             <Product key={item.ID}>
-                <div className='productName'>Product: {item.productName}</div>
-                <div className='ID'>Standard: <span>{item.Standard}</span></div>
-                <div className='price'>Price: <span> {item.price}</span> </div>
+                <div className='productName'>Product: {item.title}</div>
+                <div className='ID'>Standard: <span>{item.standard}</span></div>
+                <div className='price'>Quality: <span> {item.quality}</span> </div>
                 <div className='quantity'>Quantity: <span> {item.quantity}</span> </div>
                 <div className='location'> Location: <span>{item.location}</span> </div>
             </Product>  
@@ -93,10 +83,4 @@ const mapStateToProps=(state)=>{
     }
 }
 
-const mapDispatchToProps={
-    setTarget,
-    getInfo
-
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(ProductInfor);
+export default connect(mapStateToProps)(ProductInfor);

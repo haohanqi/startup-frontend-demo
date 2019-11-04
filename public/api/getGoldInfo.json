@@ -4,32 +4,36 @@
     "data": [
         {
 
-          "productName": "Gold",
-          "ID":"#12323",
-          "price":" $89 / kg ",
+          "title": "Gold",
+          "ID":"12323",
+          "postBy": "5db09d062038a64ca5f070a8",
+          "quality":" GB/T 467-2010 - Cu-CATH-1 ",
           "quantity":" 100 kg ",
           "location":"Canada--ON--Toronto"
         },
         {
-            "productName": "Gold",
-            "ID":"#12324",
-            "price":" $89 / kg ",
+            "title": "Gold",
+            "ID":"12324",
+            "postBy": "5db09d062038a64ca5f070a8",
+            "quality":" GB/T 467-2010 - Cu-CATH-1 ",
             "quantity":" 100 kg ",
             "location":"Canada--ON--Toronto"
         },
           
         {
-            "productName": "Gold",
-            "ID":"#12223",
-            "price":" $89 / kg ",
+            "title": "Gold",
+            "ID":"12223",
+            "postBy": "5db09d062038a64ca5f070a8",
+            "quality":" GB/T 467-2010 - Cu-CATH-1 ",
             "quantity":" 100 kg ",
             "location":"Canada--ON--Toronto"
         },
           
         {
-            "productName": "Gold",
-            "ID":"#11323",
-            "price":" $89 / kg ",
+            "title": "Gold",
+            "ID":"11323",
+            "postBy": "5db09d062038a64ca5f070a8",
+            "quality":" GB/T 467-2010 - Cu-CATH-1 ",
             "quantity":" 100 kg ",
             "location":"Canada--ON--Toronto"
         }

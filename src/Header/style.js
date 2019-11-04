@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 export const HeaderWapper = styled.div`
   z-index:1;
-  position:absolyte;
+  position:absolute;
   top:0;
   left:0;
   background-color:#F5F4F4;
-  height:56px;
+  height:12%;
   width:100%;
   border-bottom: 1px solid #f0f0f0;
   box-shadow:0 4px 8px 0 rgba(7, 17, 27, 0.1);
@@ -18,8 +18,8 @@ export const Logo = styled.div`
 position:absolute;
 top:0;
 left:0;
-height:56px;
-width:120px;
+height:100%;
+width:10%;
 transition: all 0.3s ease;
 :hover{
   background-color:#DFDEDE

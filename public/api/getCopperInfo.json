@@ -4,36 +4,40 @@
     "data": [
         {
 
-          "productName": "Copper",
-          "ID":"#42323",
-          "Standard":"LME",
-          "price":" $100 / kg ",
+          "title": "Copper",
+          "ID":"42323",
+          "postBy": "5db09d062038a64ca5f070a8",
+          "standard":"LME",
+          "quality":" GB/T 467-2010 - Cu-CATH-1 ",
           "quantity":" 100 kg ",
           "location":"Canada--ON--Toronto"
         },
         {
-            "productName": "Copper",
-            "ID":"#52324",
-            "Standard":"LME",
-            "price":" $200 / kg ",
+            "title": "Copper",
+            "ID":"52324",
+            "postBy": "5db09d062038a64ca5f070a8",
+            "standard":"LME",
+            "quality":" GB/T 467-2010 - Cu-CATH-1 ",
             "quantity":" 100 kg ",
             "location":"Canada--ON--Toronto"
         },
           
         {
-            "productName": "Copper",
-            "ID":"#42223",
-            "Standard":"LME",
-            "price":" $120/ kg ",
+            "title": "Copper",
+            "ID":"42223",
+            "postBy": "5db09d062038a64ca5f070a8",
+            "standard":"LME",
+            "quality":"GB/T 467-2010 - Cu-CATH-1 ",
             "quantity":" 100 kg ",
             "location":"Canada--ON--Toronto"
         },
           
         {
-            "productName": "Copper",
-            "ID":"#41323",
-            "Standard":"LME",
-            "price":" $22.32 / kg ",
+            "title": "Copper",
+            "ID":"41323",
+            "postBy": "5db09d062038a64ca5f070a8",
+            "standard":"LME",
+            "quality":" GB/T 467-2010 - Cu-CATH-1 ",
             "quantity":" 100 kg ",
             "location":"Canada--ON--Toronto"
         }
