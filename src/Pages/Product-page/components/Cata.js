@@ -11,15 +11,15 @@ class Cata extends Component {
     render() {
         return (
 
-            <div>     
+               
             <CataWapper>
-            <span>Categories</span>     
-                <CataInfo onClick={this.handleButtonClick}>Gold</CataInfo>
-                <CataInfo onClick={this.handleButtonClick}>Silver</CataInfo>
-                <CataInfo onClick={this.handleButtonClick}>Copper</CataInfo>
-                <CataInfo onClick={this.handleButtonClick}>Zinc</CataInfo>    
+            <span>CATAGORIES</span>     
+                <CataInfo className='gold' onClick={this.handleButtonClick}>Gold</CataInfo>
+                <CataInfo className='silver' onClick={this.handleButtonClick}>Silver</CataInfo>
+                <CataInfo className='copper' onClick={this.handleButtonClick}>Copper</CataInfo>
+                <CataInfo className='zinc' onClick={this.handleButtonClick}>Zinc</CataInfo>    
             </CataWapper>
-            </div>
+            
             
         );
     }
