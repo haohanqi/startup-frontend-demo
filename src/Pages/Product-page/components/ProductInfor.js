@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ProductInforWapper,Product} from '../style'
+import {ProductInforWapper,Product,LoadMore} from '../style'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
@@ -10,13 +10,17 @@ class ProductInfor extends Component {
     render() {
 
         return (
+    
             <ProductInforWapper>
            
             {
                this.renderProductList(this.props.target)
             } 
-                       
+            <LoadMore>Load More</LoadMore>           
             </ProductInforWapper>
+            
+            
+            
         );
     }
 

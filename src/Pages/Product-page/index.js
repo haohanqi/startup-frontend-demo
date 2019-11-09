@@ -4,7 +4,7 @@ import {getInfo,setTarget} from './store/actionCreator'
 import ProductInfor from './components/ProductInfor'
 import Summary from './components/Summary'
 import Cata from './components/Cata'
-
+import {Button} from '../Product-page/style'
 
 class index extends Component {
     
@@ -13,6 +13,10 @@ class index extends Component {
         this.props.setTarget('Copper')
         this.props.getInfo('Copper')
     }
+
+    handleScrollup=()=>{
+        window.scrollTo(0,0)
+    }
         
     render() {
         return (
@@ -20,6 +24,7 @@ class index extends Component {
                 <Summary></Summary>
                 <Cata></Cata>
                 <ProductInfor></ProductInfor>
+                <Button onClick={this.handleScrollup}>Top</Button>
             </div>
         );
     }

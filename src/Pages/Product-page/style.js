@@ -16,36 +16,41 @@ padding-right:1%;
 cursor:default;
 box-shadow: 3px 3px 3px 3px rgba(170,170,170,0.5);
 border-radius: 5px;
-font-size: 24px;
-.gold{
-  color:#F1EE1A;
-  border:1px solid #F1EE1A;
-}
-.silver{
-  color:#E1E1DB;
-  border:1px solid #E1E1DB;
-}
-.copper{
-  color:#B87333;
-  border:1px solid #B87333;
-}
-.zinc{
-  color:#B6B6B5;
-  border:1px solid #B6B6B5;
-}
+font-size: 1.33rem;
+// .gold{
+//   color:#F1EE1A;
+//   border:1px solid #F1EE1A;
+// }
+// .silver{
+//   color:#E1E1DB;
+//   border:1px solid #E1E1DB;
+// }
+// .copper{
+//   color:#B87333;
+//   border:1px solid #B87333;
+// }
+// .zinc{
+//   color:#B6B6B5;
+//   border:1px solid #B6B6B5;
+// }
+
 
 span{
     width:40%;
     margin-bottom:8%;
     margin-left:18%;
     margin-right:20%;
+    color:#009a44;
+    font-weight:700;
+
 }
 
 @media only screen and (max-width:420px ){
   float:none;
   margin-top: 4%;
-  width: 100%;
-  margin-left: 0;
+  width: 98%;
+  margin-left:0;
+
   span{
     margin-bottom:8%;
     margin-left:32%;
@@ -53,6 +58,8 @@ span{
 }
   
 }
+
+
 `
 
 export const CataInfo = styled.li`
@@ -61,6 +68,7 @@ display:block;
 height:10%;
 width:60%;
 border-radius: 20px;
+border:2px solid #009a44;
 margin-top:10%;
 margin-bottom:10%;
 margin-left: 10%;
@@ -76,6 +84,7 @@ transition: all 0.3s ease-in;
     font-size:1.16em;
     color:#009a44;
     border:1px solid #009a44;
+    background-color:#F5F4F4
 }
 
 
@@ -94,18 +103,20 @@ border-radius: 5px;
 box-shadow: 3px 3px 3px 3px rgba(170,170,170,0.5);
 background-color: #F5F4F4;
 cursor:default;
-font-size:24px;
+font-size: 1.33rem;
 .marketPlaces{
     margin-top:3%;
     margin-left:6%;
     font-size:1em;
+    color:#009a44;
+    font-weight:700;
 }
 
 @media only screen and (max-width:420px ){
     margin-left:0;
     margin-right:0;
     height:100%;
-    width:100%;
+    width:98%;
     font-size: 1em;
   }
 
@@ -115,17 +126,18 @@ export const SummaryDeal=styled.div`
 overflow: hidden;
 float:left;
 height:65%
-width:25%;
+width:23%;
 margin-top:2%;
 margin-bottom:4%;
-margin-left:5%;
+margin-left:6%;
 margin-right:3%;
-border:0.042em solid #d4d4d4;
+border: 3px solid #d4d4d4;
 border-radius: 0.2em;
 background-color:#fff;
 
 .title{
     font-size:0.9em;
+    color:#009a44;
     text-align:center;
     margin-top:5%;
     margin-bottom:5%;
@@ -136,7 +148,6 @@ background-color:#fff;
     :hover{
         border-bottom: 0.084em solid #009a44;
         font-size:1em;
-        color:#009a44;
     }
 }
 
@@ -185,6 +196,7 @@ width:55%;
 height:80%;
 margin-top:2%;
 margin-right:10%;
+font-size:1rem;
 
 cursor:default;
   .fade-enter {
@@ -209,17 +221,18 @@ cursor:default;
     float:none;
     width:100%;
     margin-right:0;
+    margin-left:0;
   }
 
 `
 
 export const Product = styled.div`
 width:91%;
-border: 1px solid #d4d4d4;
+border: 2px solid #d4d4d4;
 box-shadow: 3px 3px 3px 3px rgba(170,170,170,0.5);
 border-radius:5px;
 margin-bottom:3%;
-font-size: 18px;
+font-size: 1em;
 color:#656363;
 transition: all 0.3s ease;
 :hover{
@@ -247,26 +260,75 @@ span{
 .productName{
     display:block;
     line-height:125%;
-    border-bottom: 1px solid #d4d4d4;
+    border-bottom: 1.5px solid #009a44;
     margin-right:0;
     font-size:1.38em;
     font-weight:700;
+    color:#009a44;
     transition: all 0.3s ease;
 
     :hover{
-        color:#009a44;
         font-size:1.55em;
-        border-bottom: 2px solid#009a44;
+        border-bottom: 2px solid #009a44;
     }
 
     
 }
 
 @media only screen and (max-width:420px){
-  width:100%;
+  width:98%;
 }
 
-  
+`
+
+const BasicButton =styled.div`
+background-color:#F5F4F4;
+border: 2px solid #009a44;
+border-radius:5px;
+text-align:center;
+color:#009a44;
+cursor:pointer;
+font-size:1.11rem
+:hover{
+  border: 3px solid #009a44;
+  font-size:1.1em;
+  font-weight:600;
+}
+`
+
+export const Button = styled(BasicButton)`
+  z-index:1;
+  position:fixed;
+  bottom:5%;
+  right: 5%;
+  height: 5%;
+  width: 4%;
+  padding-top: 1.5%;
+  cursor:pointer;
+  font-size:1em;
+  @media only screen and (max-width:420px){
+    bottom:10%;
+    right:8%;
+    height: 5%;
+     width: 9%;
+  }
+  @media only screen and (max-width:380px){
+    height:6%;
+    height:3.5%;
+
+
+`
+export const LoadMore = styled(BasicButton)`
+width: 20%;
+height:30px;
+margin-left: 35%;
+margin-right:40%;
+padding-top:1%;
+font-size: 1.1em;
+ @media only screen and (max-width:420px){
+  width: 40%;
+  margin-left: 30%;
+ }
 
 
 `

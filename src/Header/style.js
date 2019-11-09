@@ -9,6 +9,7 @@ export const HeaderWapper = styled.div`
   width:100%;
   border-bottom: 1px solid #f0f0f0;
   box-shadow:0 4px 8px 0 rgba(7, 17, 27, 0.1);
+  font-size:1rem;
   @media only screen and (max-width:420px ){
     height:8%;
   }
@@ -35,7 +36,7 @@ overflow:auto;
 float:right;
 height:100%;
 width:30%;
-font-size:18px;
+font-size:1em;
 
 @media only screen and (max-width:420px ){
   width:50%

@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 	
-    html, body, span, applet, object, iframe,
+     body, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 	a, abbr, acronym, address, big, cite, code,
 	del, dfn, em, img, ins, kbd, q, s, samp,
@@ -22,6 +22,28 @@ export const GlobalStyle = createGlobalStyle`
 		font: inherit;
 		vertical-align: baseline;
 	}
+	
+ html{
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font: inherit;
+		vertical-align: baseline;
+		 font-size:18px;
+		 @media only screen and (max-width:600px){
+			 font-size:16px;
+		 }
+		 
+		 @media only screen and (min-width:768px){
+			font-size: 10px;
+		}
+		
+		@media only screen and (min-width:1000px){
+			font-size: 13.5px;
+		}
+		
+	 }
+
 	/* HTML5 display-role reset for older browsers */
 	article, aside, details, figcaption, figure, 
 	footer, header, hgroup, menu, nav, section {

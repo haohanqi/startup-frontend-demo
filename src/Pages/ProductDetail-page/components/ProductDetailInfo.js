@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {ProductDetailWapper,ProductDetailHeader,ProductDetailInfoWapper,ProductInfoDetail} from '../style'
 import { connect } from 'react-redux';
+import styled from 'styled-components'
 import {setuseridFocused} from '../store/actionCreator'
 
 class ProductDetailInfo extends Component {
@@ -8,8 +9,8 @@ class ProductDetailInfo extends Component {
         super(props)
         this.handleClick=this.handleClick.bind(this)
     }
-
-    
+  
+ 
     
     render() {
         const {productInfo} = this.props
@@ -17,9 +18,12 @@ class ProductDetailInfo extends Component {
         return (
             <ProductDetailWapper>
                 
-                <ProductDetailHeader>
+                <ProductDetailHeader >
                     <div className='productName'>Product:<span>{productInfo.product}</span></div>
-                    <div className='postBy' title='Click to see user information'  onClick={this.handleClick}>Post By:<span>User # {productInfo.postBy}</span></div>
+                    <div className='postBy' title='Click to see user information'  onClick={this.handleClick}>
+                                 Post By:<span className='user'>User # {productInfo.postBy}</span>
+                    </div>
+                    
                     <div className='type'>Type: <span>{productInfo.type}</span></div>
                     <div className='contactStatus'> Contract Status: <span>{productInfo.status}</span></div>
                 </ProductDetailHeader>

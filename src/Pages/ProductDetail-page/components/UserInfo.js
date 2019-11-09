@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {UserInfoWapper,InfoWapper,Tag} from '../style'
+import {UserInfoWapper,InfoWapper,Tag,Button} from '../style'
 import {connect} from 'react-redux'
+import {setuseridFocused} from '../store/actionCreator'
+
 class UserInfo extends Component {
     
     render() {
@@ -9,7 +11,7 @@ class UserInfo extends Component {
         return (
                
             <UserInfoWapper className={focused ? '': 'hidden'} >
-               <div className='userID'> User ID: <span>#33128</span> </div>
+               <div className='userID'> User ID: <span>#5db09d062038a64ca5f070a8</span> </div>
                
                <InfoWapper className='hidden'>
                   <div className='title'>Basic Information</div>
@@ -38,11 +40,16 @@ class UserInfo extends Component {
                 <div className='totalTranscations'>Total Transcations: <span>{userInfo.totalTrans}</span></div>
                 <div className='rate'>Average Rate: <span>{userInfo.rate}</span></div>
                </InfoWapper>
+               <Button onClick={this.handleButtonClick}>Hidden</Button>
                
 
                
             </UserInfoWapper>
         );
+    }
+
+    handleButtonClick=()=>{
+      this.props.setuseridFocused(false)
     }
 }
 
@@ -53,4 +60,8 @@ const mapStatetoProps=(state)=>{
     }
 }
 
-export default connect(mapStatetoProps) (UserInfo);
+const mapDispatchtoProps={
+    setuseridFocused
+}
+
+export default connect(mapStatetoProps,mapDispatchtoProps) (UserInfo);
