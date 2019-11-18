@@ -74,3 +74,17 @@ export const setTarget = (target) => {
         target
     }
 }
+
+export const setDisclaim =(data)=>{
+   return {
+       type: actionTypes.SET_DISCLAIM,
+       data
+   }
+}
+
+export const setCata =(data)=>{
+   return {
+       type: actionTypes.SET_CATA,
+       data
+   }
+}

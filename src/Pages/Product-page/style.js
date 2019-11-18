@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 //Cata component---------------------------------------------------
 export const CataWapper = styled.ul`
-
 display:inline-block;
 height:100%;
 width: 15%;
@@ -17,48 +16,35 @@ cursor:default;
 box-shadow: 3px 3px 3px 3px rgba(170,170,170,0.5);
 border-radius: 5px;
 font-size: 1.33rem;
-// .gold{
-//   color:#F1EE1A;
-//   border:1px solid #F1EE1A;
-// }
-// .silver{
-//   color:#E1E1DB;
-//   border:1px solid #E1E1DB;
-// }
-// .copper{
-//   color:#B87333;
-//   border:1px solid #B87333;
-// }
-// .zinc{
-//   color:#B6B6B5;
-//   border:1px solid #B6B6B5;
-// }
-
-
-span{
-    width:40%;
+div{
+    width:100%;
     margin-bottom:8%;
-    margin-left:18%;
-    margin-right:20%;
+    padding-bottom:8%;
     color:#009a44;
     font-weight:700;
+    text-align:center;
+    border-bottom: 1px solid #009a44
+}
 
+.hidden{
+  display:none;
+}
+:hover{
+  background-color:#d4d4d4;
 }
 
 @media only screen and (max-width:420px ){
   float:none;
   margin-top: 4%;
-  width: 98%;
-  margin-left:0;
-
+  width: 96%;
+  margin-left:1%;
+  margin-right:1%;
   span{
     margin-bottom:8%;
     margin-left:32%;
     margin-right:35%;
+}  
 }
-  
-}
-
 
 `
 
@@ -79,17 +65,14 @@ text-align:center;
 line-height:31px;
 text-overflow:ellipsis;
 transition: all 0.3s ease-in;
-
 :hover{
     font-size:1.16em;
     color:#009a44;
     border:1px solid #009a44;
     background-color:#F5F4F4
 }
-
-
-
 `
+
 //------------------------------------------------------------------
 
 export const SummaryWapper=styled.div`
@@ -306,17 +289,27 @@ export const Button = styled(BasicButton)`
   padding-top: 1.5%;
   cursor:pointer;
   font-size:1em;
+  
   @media only screen and (max-width:420px){
     bottom:10%;
     right:8%;
     height: 5%;
-     width: 9%;
+     width: 10%;
   }
   @media only screen and (max-width:380px){
-    height:6%;
+    width:9%;
+    height:4%;
+  }
+  @media only screen and (min-width:768px){
+    width:7%;
     height:3.5%;
+  }
+  @media only screen and (min-width:1024px){
+    width:5%;
+    height:3%;
+  }
 
-
+  
 `
 export const LoadMore = styled(BasicButton)`
 width: 20%;
@@ -330,5 +323,97 @@ font-size: 1.1em;
   margin-left: 30%;
  }
 
+`
+//----------------------------------------------------
+export const DisclaimWapper = styled.div`
+width: 70%;
+margin-top:2%;
+margin-left: 15%;
+margin-right: 15%;
+font-size:1.33rem;
+border:1px solid #d4d4d4;
+border-radius:5px;
+box-shadow: 3px 3px 3px 3px rgba(170,170,170,0.5);
+@media only screen and (max-width:420px){
+  width:98%;
+  margin-left: 0;
+  margin-right: 0;
+}
+`
+export const DisclaiminTitle =styled.div`
+overflow:auto;
+width:100%;
+border:1px solid #009a44;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+span{
+  &.title{
+    float:left;
+    margin-top:3%;
+    margin-left:6%;
+    margin-bottom:3%;
+    font-size:1em;
+    color:#009a44;
+    font-weight:700;
+  }
 
+  &.icon{
+    float:right
+    margin-top:3%;
+    margin-right:6%;
+    margin-bottom:3%;
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 4px;
+  }
+
+  &.icon-down{
+ 
+    transform: rotate(45deg);
+  }
+
+  &.icon-up{
+    margin-top:3.5%;
+    transform: rotate(-135deg);
+  }
+    
+}
+:hover{
+  background-color: #d4d4d4;
+}
+
+`
+export const Disclaiminfo =styled.div`
+
+width:100%;
+border:1px solid #009a44;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+p{
+  margin-left:6%;
+  margin-top:3%;
+  margin-bottom:3%;
+  .claimInfo{
+    font-size:1.2em;
+    color: #009a44;
+    font-weight:600;
+  }
+  .term{
+    font-size:1em;
+    color:#777777;
+    &:hover{
+      color:black;
+      font-weight:500;
+    }
+  }
+  .email{
+    font-size:1.1em;
+    color:#009a44;
+    font-weight:600
+  }
+  .last{
+    color:#009a44;
+  }
+}
 `

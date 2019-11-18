@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {ProductDetailWapper,ProductDetailHeader,ProductDetailInfoWapper,ProductInfoDetail} from '../style'
 import { connect } from 'react-redux';
-import styled from 'styled-components'
 import {setuseridFocused} from '../store/actionCreator'
 
 class ProductDetailInfo extends Component {
@@ -10,8 +9,6 @@ class ProductDetailInfo extends Component {
         this.handleClick=this.handleClick.bind(this)
     }
   
- 
-    
     render() {
         const {productInfo} = this.props
         console.log(productInfo)
@@ -21,7 +18,7 @@ class ProductDetailInfo extends Component {
                 <ProductDetailHeader >
                     <div className='productName'>Product:<span>{productInfo.product}</span></div>
                     <div className='postBy' title='Click to see user information'  onClick={this.handleClick}>
-                                 Post By:<span className='user'>User # {productInfo.postBy}</span>
+                                  Post By:<span className='user'>User # {productInfo.postBy}</span>
                     </div>
                     
                     <div className='type'>Type: <span>{productInfo.type}</span></div>
@@ -65,7 +62,7 @@ class ProductDetailInfo extends Component {
 }
 
 const mapDispatchToProps={
-setuseridFocused,
+    setuseridFocused,
 }
 
 const mapStateToProps=(state)=>{

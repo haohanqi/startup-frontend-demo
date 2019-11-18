@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import {CataWapper,CataInfo} from '../style.js'
 import { connect } from 'react-redux';
-import {getInfo,setTarget} from '../store/actionCreator'
+import {getInfo,setTarget,setCata} from '../store/actionCreator'
 
 class Cata extends Component {
     constructor(props){
         super(props)
         this.handleButtonClick=this.handleButtonClick.bind(this);
+        this.handleCataShowUp = this.handleCataShowUp.bind(this);
     }
     render() {
         return (
 
                
             <CataWapper>
-            <span>CATAGORIES</span>     
+            <div onClick={this.handleCataShowUp}>CATAGORIES</div>
+            <div className={this.props.showCata ? '':'hidden'}>     
                 <CataInfo className='gold' onClick={this.handleButtonClick}>Gold</CataInfo>
                 <CataInfo className='silver' onClick={this.handleButtonClick}>Silver</CataInfo>
                 <CataInfo className='copper' onClick={this.handleButtonClick}>Copper</CataInfo>
                 <CataInfo className='zinc' onClick={this.handleButtonClick}>Zinc</CataInfo>    
+            </div>
             </CataWapper>
             
             
@@ -47,6 +50,16 @@ class Cata extends Component {
         getInfo(target)
       }
     }
+
+    handleCataShowUp(){
+      if(this.props.showCata===true){
+        this.props.setCata(false)
+      }else{
+        this.props.setCata(true)
+      }
+      
+
+    }
         
  }
 
@@ -56,14 +69,16 @@ class Cata extends Component {
     Gold:state.get('product').get('gold'),
     Silver:state.get('product').get('silver'),
     Copper:state.get('product').get('copper'),
-    Zinc:state.get('product').get('zinc')
+    Zinc:state.get('product').get('zinc'),
+    showCata:state.get('product').get('showCata')
 
    }
  }
 
  const mapDispatchToProps = {
      getInfo, 
-     setTarget
+     setTarget,
+     setCata
  }
 
 

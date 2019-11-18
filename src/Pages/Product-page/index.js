@@ -4,6 +4,7 @@ import {getInfo,setTarget} from './store/actionCreator'
 import ProductInfor from './components/ProductInfor'
 import Summary from './components/Summary'
 import Cata from './components/Cata'
+import Disclaim from './components/Disclaim'
 import {Button} from '../Product-page/style'
 
 class index extends Component {
@@ -22,6 +23,7 @@ class index extends Component {
         return (
             <div>
                 <Summary></Summary>
+                <Disclaim></Disclaim>
                 <Cata></Cata>
                 <ProductInfor></ProductInfor>
                 <Button onClick={this.handleScrollup}>Top</Button>
