@@ -51,14 +51,14 @@ class Cata extends Component {
       }
     }
 
+
+    //set up showCata status 
     handleCataShowUp(){
       if(this.props.showCata===true){
         this.props.setCata(false)
       }else{
         this.props.setCata(true)
       }
-      
-
     }
         
  }

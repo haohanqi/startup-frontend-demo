@@ -1,7 +1,7 @@
 import axios from 'axios'
 import * as actionTypes from './actionType'
 
-
+// set data into different catas according to target value. 
 const setInfo = (data, target) => {
     if (target === "Gold") {
         return {
@@ -29,6 +29,7 @@ const setInfo = (data, target) => {
     }
 }
 
+//common async get function to get differnt catas material according to target
 const asyncGet = (url, target, dispatch) => {
     axios.get(url).then(
         (res) => {
@@ -44,6 +45,8 @@ const asyncGet = (url, target, dispatch) => {
 
 }
 
+
+//according to different target value to request different api
 export const getInfo = (target) => {
     return (dispatch) => {
 
@@ -67,7 +70,7 @@ export const getInfo = (target) => {
 
 }
 
-
+// set target value, according to different target value show different cata list 
 export const setTarget = (target) => {
     return {
         type: actionTypes.SET_TARGET,
@@ -75,16 +78,18 @@ export const setTarget = (target) => {
     }
 }
 
-export const setDisclaim =(data)=>{
-   return {
-       type: actionTypes.SET_DISCLAIM,
-       data
-   }
+// set disclaim status, according to disclaim status to show up or hidden diclaim 
+export const setDisclaim = (data) => {
+    return {
+        type: actionTypes.SET_DISCLAIM,
+        data
+    }
 }
 
-export const setCata =(data)=>{
-   return {
-       type: actionTypes.SET_CATA,
-       data
-   }
+// set cata status, according to cata status to show up or hidden cata 
+export const setCata = (data) => {
+    return {
+        type: actionTypes.SET_CATA,
+        data
+    }
 }

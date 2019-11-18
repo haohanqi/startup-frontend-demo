@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 import {DisclaimWapper,DisclaiminTitle,Disclaiminfo} from '../style'
 import {setDisclaim} from '../store/actionCreator'
 class Disclaim extends Component {
-
+    
+    // set up showDisclaim to control discliam show up or hidden
     handleInfoShowUp=()=>{
           if(this.props.showDisclaim === false){
               this.props.setDisclaim(true)
@@ -12,10 +13,10 @@ class Disclaim extends Component {
           }
     }
 
+    // according to showDisclaim value to show up or hidden disclaim information
     renderDisclaimInfo =(showDisclaim)=>{
         if(showDisclaim===true){
             return (
-
                 <Disclaiminfo>
                   <p>
                   <span className='claimInfo'>Procedure to post at the marketplace</span><br/><br/>

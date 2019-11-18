@@ -1,67 +1,69 @@
 import React, { Component } from 'react';
-import {UserInfoWapper,InfoWapper,Tag,Button} from '../style'
-import {connect} from 'react-redux'
-import {setuseridFocused} from '../store/actionCreator'
+import { UserInfoWapper, InfoWapper, Tag, Button } from '../style'
+import { connect } from 'react-redux'
+import { setuseridFocused } from '../store/actionCreator'
 
+//UserInfo contains user info details. if porps.focused is true, show up. else hidden
 class UserInfo extends Component {
-    
+
     render() {
-        const {focused,userInfo}=this.props;
-        
+        const { focused, userInfo } = this.props;
+
         return (
-               
-            <UserInfoWapper className={focused ? '': 'hidden'} >
-               <div className='userID'> User ID: <span>#5db09d062038a64ca5f070a8</span> </div>
-               
-               <InfoWapper className='hidden'>
-                  <div className='title'>Basic Information</div>
-                  <div className='companyName'>Company Name: <span>{userInfo.companyName}</span></div>
-                  <div className='location'>Location: <span>{userInfo.location}</span> </div>
-                  <div className='web'>Company Website: <span>{userInfo.companyWebsite}</span> </div>
-                  <div className='product'> 
-                          Company Product: 
-                         { 
-                          userInfo.companyProduct ? userInfo.companyProduct.map((item,index)=>{
-                            return <Tag className='tag' key={index}>{item}</Tag>
-                         }) : []   
+
+            <UserInfoWapper className={focused ? '' : 'hidden'} >
+                <div className='userID'> User ID: <span>#5db09d062038a64ca5f070a8</span> </div>
+
+                <InfoWapper className='hidden'>
+                    <div className='title'>Basic Information</div>
+                    <div className='companyName'>Company Name: <span>{userInfo.companyName}</span></div>
+                    <div className='location'>Location: <span>{userInfo.location}</span> </div>
+                    <div className='web'>Company Website: <span>{userInfo.companyWebsite}</span> </div>
+                    <div className='product'>
+                        Company Product:
+                         {
+                            userInfo.companyProduct ? userInfo.companyProduct.map((item, index) => {
+                                return <Tag className='tag' key={index}>{item}</Tag>
+                            }) : []
                         }
-                  </div> 
-               </InfoWapper>
+                    </div>
+                </InfoWapper>
 
-               <InfoWapper className='hidden'>
-                 <div className='title'>Contact Information</div>
-                 <div className='phoneNumber'>Phone Number: <span>{userInfo.phoneNumber}</span></div>
-                 <div className='email'>Email:<span>{userInfo.email}</span> </div>
-                 <div className='faxNumber'>Fax Number:<span>{userInfo.faxNumber}</span> </div>
-               </InfoWapper>
+                <InfoWapper className='hidden'>
+                    <div className='title'>Contact Information</div>
+                    <div className='phoneNumber'>Phone Number: <span>{userInfo.phoneNumber}</span></div>
+                    <div className='email'>Email:<span>{userInfo.email}</span> </div>
+                    <div className='faxNumber'>Fax Number:<span>{userInfo.faxNumber}</span> </div>
+                </InfoWapper>
 
-               <InfoWapper className='hidden'>
-                <div className='title'> Transcations</div>
-                <div className='totalTranscations'>Total Transcations: <span>{userInfo.totalTrans}</span></div>
-                <div className='rate'>Average Rate: <span>{userInfo.rate}</span></div>
-               </InfoWapper>
-               <Button onClick={this.handleButtonClick}>Hidden</Button>
-               
+                <InfoWapper className='hidden'>
+                    <div className='title'> Transcations</div>
+                    <div className='totalTranscations'>Total Transcations: <span>{userInfo.totalTrans}</span></div>
+                    <div className='rate'>Average Rate: <span>{userInfo.rate}</span></div>
+                </InfoWapper>
+                <Button onClick={this.handleButtonClick}>Hidden</Button>
 
-               
+
+
             </UserInfoWapper>
         );
     }
 
-    handleButtonClick=()=>{
-      this.props.setuseridFocused(false)
+    //hidden button changes focused status,in order to hidden userinfo
+    handleButtonClick = () => {
+        this.props.setuseridFocused(false)
     }
 }
 
-const mapStatetoProps=(state)=>{
+const mapStatetoProps = (state) => {
     return {
         focused: state.get('productDetail').get('useridFocus'),
-        userInfo:state.get('productDetail').get('userInfo')
+        userInfo: state.get('productDetail').get('userInfo')
     }
 }
 
-const mapDispatchtoProps={
+const mapDispatchtoProps = {
     setuseridFocused
 }
 
-export default connect(mapStatetoProps,mapDispatchtoProps) (UserInfo);
+export default connect(mapStatetoProps, mapDispatchtoProps)(UserInfo);
