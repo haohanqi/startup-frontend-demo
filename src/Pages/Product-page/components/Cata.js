@@ -10,9 +10,7 @@ class Cata extends Component {
         this.handleCataShowUp = this.handleCataShowUp.bind(this);
     }
     render() {
-        return (
-
-               
+        return ( 
             <CataWapper>
             <div onClick={this.handleCataShowUp}>CATAGORIES</div>
             <div className={this.props.showCata ? '':'hidden'}>     

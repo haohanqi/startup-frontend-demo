@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header'
+import AboutPage from './Pages/About-page'
 import ProductPage from './Pages/Product-page'
 import ProductDetailInfo from './Pages/ProductDetail-page'
 import {Provider} from 'react-redux'
@@ -15,6 +16,7 @@ function App() {
     <BrowserRouter>
       <div>
       <Header></Header>
+      <Route path='/' exact component={AboutPage}></Route>
       <Route path='/product' exact component={ProductPage}></Route>
       <Route path='/productDetail/:pid/:uid' exact component={ProductDetailInfo}></Route>
       </div>
