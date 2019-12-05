@@ -31,11 +31,11 @@ export const GlobalStyle = createGlobalStyle`
 		vertical-align: baseline;
 		 font-size:18px;
 		 @media only screen and (max-width:600px){
-			 font-size:16px;
+			 font-size:11px;
 		 }
 		 
 		 @media only screen and (min-width:768px){
-			font-size: 10px;
+			font-size: 12.5px;
 		}
 		
 		@media only screen and (min-width:1000px){

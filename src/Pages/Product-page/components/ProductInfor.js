@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import { ProductInforWapper, Product, LoadMore } from '../style'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import {setLoading} from '../store/actionCreator'
+import FadeIn from 'react-fade-in'
+import Loading from './Loading.js'
 
 // productInfor contains different catas product list
 class ProductInfor extends Component {
-
+   
+    
     render() {
 
         return (
@@ -25,28 +28,70 @@ class ProductInfor extends Component {
 
     // according to target value(gold silver copper zinc) to render different product list
     renderProductList(target) {
-        const { Gold, Silver, Copper, Zinc } = this.props
+        const { Gold, Silver, Copper, Zinc,isLoading, } = this.props
+        if (target === 'Gold' ) {
+            if(isLoading){
+                return <Loading/>
+            }else{
+                return (
+                    <FadeIn transitionDuration={600}>
+                        {
+                            Gold.map((item) => {
+                                return this.productItem(item)
+                             })  
+                        }
+                    </FadeIn>
+                    )
+            }       
+        }
+        
+        if (target === 'Silver' ) {
+            if(isLoading){
+                return <Loading/>
+            }else{
+                return (
+                    <FadeIn transitionDuration={600}>
+                        {
+                            Silver.map((item) => {
+                                return this.productItem(item)
+                             })  
+                        }
+                    </FadeIn>
+                    )
+            }  
+        }
 
-        if (target === 'Gold') {
-            return Gold.map((item) => {
-                return this.productItem(item)
-            })
+        if (target === 'Copper' ) {
+            if(isLoading){
+                return <Loading/>
+            }else{
+                return (
+                <FadeIn transitionDuration={600}>
+                    {
+                        Copper.map((item) => {
+                            return this.productItem(item)
+                         })  
+                    }
+                </FadeIn>
+                )
+            }  
+            
+       
         }
-        if (target === 'Silver') {
-            return Silver.map((item) => {
-                return this.productItem(item)
-            })
-        }
-        if (target === 'Copper') {
-            console.log(Copper)
-            return Copper.map((item) => {
-                return this.productItem(item)
-            })
-        }
-        if (target === 'Zinc') {
-            return Zinc.map((item) => {
-                return this.productItem(item)
-            })
+        if (target === 'Zinc' ) {
+            if(isLoading){
+                return <Loading/>
+            }else{
+                return (
+                    <FadeIn transitionDuration={600}>
+                        {
+                            Zinc.map((item) => {
+                                return this.productItem(item)
+                             })  
+                        }
+                    </FadeIn>
+                    )
+            }  
         }
     }
 
@@ -55,11 +100,6 @@ class ProductInfor extends Component {
         return (
             <Link to={'/productDetail/' + item.ID + '/' + item.postBy} style={{ textDecoration: 'none' }}>
 
-                <ReactCSSTransitionGroup
-                    transitionName="fade"
-                    transitionEnterTimeout={500}
-                    transitionLeaveTimeout={300}
-                >
 
                     <Product key={item.ID}>
                         <div className='productName'>Product: {item.title}</div>
@@ -69,9 +109,11 @@ class ProductInfor extends Component {
                         <div className='location'> Location: <span>{item.location}</span> </div>
                     </Product>
 
-                </ReactCSSTransitionGroup>
+            </Link> 
+            
+           
 
-            </Link>
+           
         )
     }
 
@@ -79,6 +121,7 @@ class ProductInfor extends Component {
 
 const mapStateToProps = (state) => {
     return {
+        isLoading:state.get('product').get('isLoading'),
         target: state.get('product').get('target'),
         Gold: state.get('product').get('gold'),
         Silver: state.get('product').get('silver'),
@@ -87,4 +130,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(ProductInfor);
+const mapDispatchToProps={
+  setLoading
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(ProductInfor);

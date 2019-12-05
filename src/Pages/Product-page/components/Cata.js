@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {CataWapper,CataInfo} from '../style.js'
 import { connect } from 'react-redux';
-import {getInfo,setTarget,setCata} from '../store/actionCreator'
+import {getInfo,setTarget,setCata,setLoading} from '../store/actionCreator'
 
 class Cata extends Component {
     constructor(props){
@@ -28,23 +28,28 @@ class Cata extends Component {
     //Click different catas, set differnet target. According to different target value, call each get method.
     handleButtonClick(e){
       
-      const {Gold,Silver,Copper,Zinc,setTarget,getInfo}=this.props
+      const {Gold,Silver,Copper,Zinc,setTarget,getInfo,setLoading}=this.props
 
       //get target from cata's name
       const target = e.target.textContent 
       setTarget(e.target.textContent)
      
       //Only request getInfo at first time. If specific cata has already been request, no need to request agian. 
-      if(target === 'Gold' && Gold.size===0){    
+      if(target === 'Gold' && Gold.size===0){   
+        setLoading(true)
         getInfo(target)
       }
       if(target === 'Silver'&& Silver.size===0){
+        setLoading(true)
         getInfo(target)
       }
-      if(target === 'Copper'&& Copper.size===0){
+      if(target === 'Copper' && Copper.size===0){
+        console.log('copper')
+        setLoading(true)
         getInfo(target)
       }
       if(target === 'Zinc'&& Zinc.size===0){
+        setLoading(true)
         getInfo(target)
       }
     }
@@ -63,7 +68,7 @@ class Cata extends Component {
 
  const mapStateToProps=(state)=>{
    return{
-
+    isLoading:state.get('product').get('isLoading'),
     Gold:state.get('product').get('gold'),
     Silver:state.get('product').get('silver'),
     Copper:state.get('product').get('copper'),
@@ -76,7 +81,9 @@ class Cata extends Component {
  const mapDispatchToProps = {
      getInfo, 
      setTarget,
-     setCata
+     setCata,
+     setLoading
+
  }
 
 

@@ -180,31 +180,20 @@ height:80%;
 margin-top:2%;
 margin-right:10%;
 font-size:1rem;
-
 cursor:default;
-  .fade-enter {
-    opacity: 0;
-  }
-  
-  .fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 3000ms ease-in;
-  }
-  
-  .fade-leave {
-    opacity: 0.5;
-  }
-  
-  .fade-leave.fade-leave-active {
-    opacity: 0;
-    transition: opacity 3000ms ease-out;
-  }
 
+.loading{
+   margin-right:10%;
+}
+  
   @media only screen and (max-width:420px){
     float:none;
     width:100%;
     margin-right:0;
     margin-left:0;
+    .loading{
+      margin-right:3%;
+   }
   }
 
 `

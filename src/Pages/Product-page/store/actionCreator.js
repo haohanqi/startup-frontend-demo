@@ -31,17 +31,22 @@ const setInfo = (data, target) => {
 
 //common async get function to get differnt catas material according to target
 const asyncGet = (url, target, dispatch) => {
-    axios.get(url).then(
-        (res) => {
-            const data = res.data.data
-            //console.log(data)
-            dispatch(setInfo(data, target))
-        }
-    ).catch(
-        (error) => {
-            console.log(error)
-        }
-    )
+    setTimeout(
+        ()=>{axios.get(url).then(
+            (res) => {
+                const data = res.data.data
+                if(data){
+                    dispatch(setInfo(data, target))
+                    dispatch(setLoading(false))
+                }
+                
+            }
+        ).catch(
+            (error) => {
+                console.log(error)
+            }
+        )},2000)
+    
 
 }
 
@@ -90,6 +95,13 @@ export const setDisclaim = (data) => {
 export const setCata = (data) => {
     return {
         type: actionTypes.SET_CATA,
+        data
+    }
+}
+
+export const setLoading=(data)=>{
+    return {
+        type:actionTypes.SET_LOADING,
         data
     }
 }

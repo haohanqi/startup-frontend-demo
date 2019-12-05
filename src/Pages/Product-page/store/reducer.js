@@ -7,7 +7,8 @@ const defaultState=fromJS({
     gold:[ ],
     silver:[ ],
     copper:[ ],
-    zinc:[ ]
+    zinc:[ ],
+    isLoading:false
 })
 
 export default(state=defaultState,action)=>{
@@ -38,6 +39,9 @@ export default(state=defaultState,action)=>{
 
     if(action.type===actionTypes.SET_CATA){
       return state.set('showCata',action.data)
+    }
+    if(action.type===actionTypes.SET_LOADING){
+      return state.set('isLoading',action.data)
     }
 
     return state;

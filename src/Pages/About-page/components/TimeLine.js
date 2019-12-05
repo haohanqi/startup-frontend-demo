@@ -4,7 +4,7 @@ class TimeLine extends Component {
     constructor(props){
         super(props)
         this.state={
-            index0: false,
+            index0: true,
             index1: false,
             index2: false,
             index3: false,
@@ -28,11 +28,13 @@ class TimeLine extends Component {
             <TitleWapper>
             <div className='title'>Developing Plans for 2019</div>
             <span></span>
-            <p className='description'>Main goal is to developing blockchain transcation platform online
-            Click on Date for more details 
+            <p className='description'>Moken Exchange is a blockchain development firm. Based on the technology specialty, we assist clients with tailored service to achieve the successful adaptation of blockchain technology. 
+            Moken Exchange is in the process of developing a blockchain-powered trading platform, targeting the global mineral commodity industry. The development is as follows:
+            
             </p>
             </TitleWapper>
-            
+         
+       <div className='plansection'>
           <PlanWapper>
                
                <Plan className={this.state.index0 ? 'animation':'none'}>
@@ -98,6 +100,7 @@ class TimeLine extends Component {
                
                <VerticalLine/>
              </PlanWapper>
+             </div>
 
             </TimeLineSection>
         );

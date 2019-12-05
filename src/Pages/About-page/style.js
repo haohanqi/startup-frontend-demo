@@ -31,6 +31,9 @@ export const BackgroundHeader = styled.div`
 height:450px;
 width:100%;
 background-color:#F5F5F5;
+@media only screen and (max-width:420px ){
+height:300px;
+} 
 `
 
 export const MissionSection = styled.div`
@@ -40,9 +43,8 @@ width:100%;
 export const MissionWapper = styled.div`
 overflow:hidden;
 width:55%;
-height:600px;
 margin-left:5%;
-padding-top:3%;
+padding-top:3%;  
 font-size:1rem;
 .title{
     margin-left:10%;
@@ -62,14 +64,20 @@ font-size:1rem;
     animation-timing-function: ease;
 }
 
+@media only screen and (max-width:770px ){
+    width:90%;
+    margin-left:0%;
+   
+}
+
 
 `
 
 export const MissionDetail = styled.div`
 overflow:hidden;
 float:left;
-width: 30%;
-height: 200px;
+width: 35%;
+height: 230px;
 margin-left:10%;
 margin-bottom:10%;
 border-radius:5px;
@@ -78,17 +86,13 @@ border: 1px solid #a9cd2e;
     width:100%;
     font-size:2em;
     text-align:center;
-    margin-top:80px; 
+    margin-top:35%;
 };
 
 .missionDescription{
      display:none;
      width:90%;
      font-size:1.5em;
-     text-align:center;
-     margin-top:20px;
-     margin-left:5%;
-     margin-right:5%;
      color:black;
      cursor:default;
 };
@@ -96,23 +100,40 @@ border: 1px solid #a9cd2e;
 transition: all 1s linear;
 &:hover{
     background-color:#a9cd2e;
-    height:200px;
     .missionName{
         display:none;
     }
     .missionDescription{
-        margin-top:70px;
+        margin-top:8%;
+        text-align:center;
+        line-height:1.2;
+        padding-top:12%;
+        padding-left:5%;
+        padding-right:5%;
         display:block;
         color:#666666;
     }
+  }
 
+  @media only screen and (max-width:770px ){
+    height:135px;
+    width: 85%;
+    margin-top:6%;
+    .missionName{
+        margin-top:50px; 
+    }
+    &:hover{
+        .missionDescription{
+            margin-top:0;
+        }
+    }
+   
 }
-`
 
+`
 export const AboutUs = styled.div`
 float:right;
 width: 30%;
-height:600px;
 margin-right:5%;
 margin-left:5%;
 padding-top:3%;
@@ -144,7 +165,17 @@ p{
     margin-top:6%;
     font-size:1.5em;
     color:#666666;
+    line-height: 1.6;
+    margin-bottom:3%;
+
 }
+
+@media only screen and (max-width:770px ){
+    width:90%;
+    margin-right:5%;
+    margin-left:5%;
+}
+
 
 `
 export const ProblemSection = styled(MissionSection)`
@@ -159,6 +190,9 @@ border-top:none;
     animation-name: ${missionKeyFrames};
     animation-duration: 3s;
     animation-timing-function: ease;
+}
+@media only screen and (max-width:770px ){
+    float:left;
 }
 `
 
@@ -179,39 +213,47 @@ margin-left:5%;
 &.display{
     display:none;
 }
+@media only screen and (max-width:770px ){
+    display:none;
+}
 `
 
 
 export const ServerSection = styled(MissionSection)`
+margin-bottom: 5%;
 
 `
 
 export const MarketplaceWapper = styled(MissionWapper)`
+float:left;
 width:35%;
-height:1000px;
 margin-top:0%;
-margin-left:8%;
+margin-right:8%;
+margin-bottom:5%;
 .head{
     ${head};
+}
+@media only screen and (max-width:770px){
+    float:none;
+    margin:10% auto;
 }
 `
 
 export const TranscationWapper = styled(MarketplaceWapper)`
-float:right;
-margin-right:8%;
-margin-left:0;
+float:left;
+margin-left:8%;
+margin-right:0;
 font-size:1rem;
 .head{
    ${head}
 }
-
 `
 export const TitleWapper = styled.div`
 margin-top:5%;
-width:30%;
+width:50%;
 height:300px;
-margin-left:35%;
-margin-right:35%;
+margin-left:25%;
+margin-right:25%;
 text-align:center;
 color: #a9cd2e;
 .title{
@@ -224,23 +266,32 @@ span{
     width:80%;
     height:2px;
     border-top:1px solid #a9cd2e;
-    margin:10% 10%;
+    margin:5% 10%;
 }
 
 p{
     font-size:1.5em;
+    line-height:1.2;
 }
+@media only screen and (max-width:770px ){
+    width:60%;
+    height:250px;
+    margin-left:20%;
+    argin-right:20%;
+
+} 
+
 `
 export const DetailsWapper = styled.div`
 overflow:hidden;
-width:80%;
-height:155px;
+width:85%;
+height:200px;
 margin:10% 10%;
 .title{
     width:60%;
     float:right;
     margin-top:8%;
-    margin-left:0;
+    margin-left:0%;
     margin-bottom:0;
     margin-right:5%;
     color:black;
@@ -252,9 +303,14 @@ margin:10% 10%;
     width:60%;
     float:right;
     margin-top:3%;
-    margin-right:5%;
     color:#666666;
     font-size:1.3em;
+    line-height:1.3;
+}
+@media only screen and (max-width:770px){
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
 }
 `
 
@@ -263,9 +319,17 @@ float:left;
 width:23%;
 height:80px;
 border-radius:100%;
-border: 1px solid #a9cd2e;
 margin-left:5%;
 margin-top:8%;
+text-align:center;
+.fa-globe{
+    margin-top:6%;
+}
+
+@media only screen and (max-width:770px){
+    height:70px;
+    margin-right:6%;
+}
 `
 
 
@@ -319,19 +383,43 @@ input{
     margin-bottom:5%;
 }
 
+@media only screen and (max-width:770px){
+    float:none;
+    width:100%;
+    .name{
+        width:40%;
+    }
+    .contact{
+        width:50%;
+    }
+    .subject{
+        width:60%;
+    }
+    .message{
+        width:90%;
+
+    }
+    .formButton{
+       margin:5% auto;
+    }
+}
+
 `
 
 export const TimeLineSection = styled(MissionSection)`
 padding-top:5%;
 padding-bottom:5%;
 background-color:#e9f0f5;
-// &::before{
-//         float:right
-//         content: '';
-// 		height: 600px;
-//         width: 4px;
-//         background-color:red;
-// }
+.plansection{
+    margin-top:10%;
+}
+
+@media only screen and (max-width:720px){
+    .plansection{
+        margin-top:25%;
+    }
+}
+
 
 `
 
@@ -361,12 +449,24 @@ transition: all 0.5s linear;
     background-color:#fff;
 
 }
+
+@media only screen and (max-width:420px){
+width:15%;
+height:75px;
+margin-left:5%;
+}
 `
 export const VerticalLine = styled.div`
 width:0%;
 border-left:5px solid #d7e4ed;
 height:150px;
 margin:1% auto;
+
+@media only screen and (max-width:420px){
+    margin-left: 12.5%;
+    height:160px;
+
+    }
 `
 
 export const PlanWapper = styled.div`
@@ -391,7 +491,7 @@ export const Plan = styled.div`
  }
  &.animation{
     animation-name: ${rightIn};
-    animation-duration: 0.8s;
+    animation-duration: 1s;
     animation-timing-function: ease;
 }
 &.evenAnimation{
@@ -427,6 +527,21 @@ export const Plan = styled.div`
     padding-right:2%;
     padding-bottom:2%;
 }
+@media only screen and (max-width:420px){
+    float:right;
+    width:60%;
+    height:230px;
+    &.even{
+        float:right;
+        margin-right:5%;
+        margin-left:10%;
+      }
+    &.evenAnimation{
+        animation-name: ${rightIn};
+        
+    }
+
+}
 `
 export const FooterSection=styled(MissionSection)`
 background-color:black;
@@ -438,7 +553,6 @@ export const AboutFooterWapper =styled.div`
 float:left;
 display: block;
 width:20%;
-height:400px;
 margin:5% 0% 5% 10%;
 .title{
     font-size: 1.5em;
@@ -449,9 +563,22 @@ margin:5% 0% 5% 10%;
     font-size:1em; 
 }
 
+@media only screen and (max-width:420px){
+    width:80%;
+    margin-left:10%;
+    .title{
+        margin-bottom:10%;
+    }
+
+}
+
 `
 export const QuickLinkWapper =styled(AboutFooterWapper)`
 padding-left:8%;
+@media only screen and (max-width:420px){
+    padding-left:0%;
+
+}
 `
 export const QuickLink = styled.div`
 display:block;
@@ -483,6 +610,8 @@ div {
      }
     
 }
+
+
  
 
 `

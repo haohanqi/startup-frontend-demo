@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {getInfo,setTarget} from './store/actionCreator'
+import {getInfo,setTarget,setLoading} from './store/actionCreator'
 import ProductInfor from './components/ProductInfor'
 import Summary from './components/Summary'
 import Cata from './components/Cata'
@@ -12,6 +12,7 @@ class index extends Component {
     componentDidMount(){
         //main page defualtly render Copper list
         this.props.setTarget('Copper')
+        this.props.setLoading(true)
         this.props.getInfo('Copper')
     }
 
@@ -34,7 +35,7 @@ class index extends Component {
 
 
 const mapDispathctoProps={
-    setTarget,getInfo
+    setTarget,getInfo,setLoading
 }
 
 export default connect(null,mapDispathctoProps)(index);
