@@ -1,0 +1,39 @@
+{
+
+    "success":true,
+    "data": [
+        {
+
+          "productName": "Zinc",
+          "ID":"#42323",
+          "price":" $100 / kg ",
+          "quantity":" 100 kg ",
+          "location":"Canada--ON--Toronto"
+        },
+        {
+            "productName": "Zinc",
+            "ID":"#42324",
+            "price":" $200 / kg ",
+            "quantity":" 100 kg ",
+            "location":"Canada--ON--Toronto"
+        },
+          
+        {
+            "productName": "Zinc",
+            "ID":"#42223",
+            "price":" $120/ kg ",
+            "quantity":" 100 kg ",
+            "location":"Canada--ON--Toronto"
+        },
+          
+        {
+            "productName": "Zinc",
+            "ID":"#41323",
+            "price":" $22.32 / kg ",
+            "quantity":" 100 kg ",
+            "location":"Canada--ON--Toronto"
+        }
+
+
+]
+}
