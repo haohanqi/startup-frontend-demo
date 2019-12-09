@@ -96,8 +96,8 @@ class index extends Component {
                        
                        <ProblemDetail>
                          <div className='missionName'>Idealiazation</div>
-                         <div className='missionDescription'>Moken Exchange talks thoroughly with the clients to 
-                         identify the needs from daily operation and decide with the clients together to decide the option to adopt blockchain technology
+                         <div className='missionDescription'> Identification of the tangible needs from daily operation 
+                         to adopt blockchain technology 
                          </div>
                        </ProblemDetail>
                        
@@ -109,14 +109,16 @@ class index extends Component {
                        
                        <ProblemDetail>
                          <div className='missionName'>Custom Development</div>
-                         <div className='missionDescription'>Build enterprise-grade decentralized applications (dApps) to help clients accelerate time to market and maximize ROI.
+                         <div className='missionDescription'>In use of the enterprise-grade decentralized applications to the realization of the blockchain technology advantages and benefits.
+
                          </div>
                        </ProblemDetail>
                        
                        <ProblemDetail>
-                         <div className='missionName'>Idealiazation</div>
-                         <div className='missionDescription'>Moken Exchange talks thoroughly with the clients to 
-                         identify the needs from daily operation and decide with the clients together to decide the option to adopt blockchain technology
+                         <div className='missionName'>Demo</div>
+                         <div className='missionDescription'>Visual presentation of the product with direct 
+                         understanding of the technology. Execution team is able to make the decision with confidence.
+
                          </div>
                        </ProblemDetail>
                     </ProblemWapper>
@@ -127,13 +129,10 @@ class index extends Component {
                     <TitleWapper>
                       <div className='title'>Best BlockChain Servers</div>
                       <span></span>
-                      <p className='description'>Moken Exchange consists of a young team of enterprise consultants, 
-                      asset portfolio managers and full-stack developers; 
-                      based on the long-term professional experience in product development, 
-                      commodity trading and dAPP development,
-                       Moken Exchanges strives to bring the high-quality service for enterprise to realize blockchain technology adaptation. 
-                       Mostly importantly, 
-                      we ensure that the clients are able to perceive the tangible benefits through increasing efficiency and  enhanced transparency</p>
+                      <p className='description'>Moken Exchange’s young team of consultants, 
+                      portfolio managers and full-stack developers provides professional and proactive services in application development.
+                       Moken Exchanges strives to shorten the distance of the new-ear technology with the enterprise in use.
+                      </p>
                     </TitleWapper>
 
                     <MarketplaceWapper>

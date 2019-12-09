@@ -3,7 +3,7 @@ import { missionKeyFrames, aboutKeyFrames,rightIn,leftIn  } from './keyframes'
 
 const head = `
 text-align:center;
-font-size:2em;
+font-size:2.5em;
 color:#a9cd2e;
 font-weight:700;
 `
@@ -64,7 +64,7 @@ font-size:1rem;
     animation-timing-function: ease;
 }
 
-@media only screen and (max-width:770px ){
+@media only screen and (max-width:770px){
     width:90%;
     margin-left:0%;
    
@@ -76,8 +76,8 @@ font-size:1rem;
 export const MissionDetail = styled.div`
 overflow:hidden;
 float:left;
-width: 35%;
-height: 230px;
+width: 38%;
+height: 250px;
 margin-left:10%;
 margin-bottom:10%;
 border-radius:5px;
@@ -86,13 +86,13 @@ border: 1px solid #a9cd2e;
     width:100%;
     font-size:2em;
     text-align:center;
-    margin-top:35%;
+    margin-top:106px;
 };
 
 .missionDescription{
      display:none;
      width:90%;
-     font-size:1.5em;
+     font-size:1.6em;
      color:black;
      cursor:default;
 };
@@ -104,9 +104,9 @@ transition: all 1s linear;
         display:none;
     }
     .missionDescription{
-        margin-top:8%;
+        margin-top:20px;
         text-align:center;
-        line-height:1.2;
+        line-height:1.4;
         padding-top:12%;
         padding-left:5%;
         padding-right:5%;
@@ -116,15 +116,16 @@ transition: all 1s linear;
   }
 
   @media only screen and (max-width:770px ){
-    height:135px;
+    height:150px;
     width: 85%;
-    margin-top:6%;
+    margin-top:20px;
     .missionName{
-        margin-top:50px; 
+        margin-top:60px; 
     }
     &:hover{
         .missionDescription{
             margin-top:0;
+            padding-top:50px;
         }
     }
    
@@ -157,13 +158,13 @@ span{
 div{
     margin-top:6%;
     padding-bottom:3%;
-    font-size:1.5em;
+    font-size:1.8em;
     border-bottom: 1px solid #a9cd2e
 }
 
 p{
     margin-top:6%;
-    font-size:1.5em;
+    font-size:1.8em;
     color:#666666;
     line-height: 1.6;
     margin-bottom:3%;
@@ -257,7 +258,7 @@ margin-right:25%;
 text-align:center;
 color: #a9cd2e;
 .title{
-    font-size:2em;
+    font-size:3em;
     font-weight:700;
 }
 
@@ -270,7 +271,7 @@ span{
 }
 
 p{
-    font-size:1.5em;
+    font-size:2em;
     line-height:1.2;
 }
 @media only screen and (max-width:770px ){
@@ -295,7 +296,7 @@ margin:10% 10%;
     margin-bottom:0;
     margin-right:5%;
     color:black;
-    font-size:1.5em;
+    font-size:1.8em;
     text-align:center;
 
 }
@@ -304,7 +305,7 @@ margin:10% 10%;
     float:right;
     margin-top:3%;
     color:#666666;
-    font-size:1.3em;
+    font-size:1.6em;
     line-height:1.3;
 }
 @media only screen and (max-width:770px){
@@ -414,7 +415,7 @@ background-color:#e9f0f5;
     margin-top:10%;
 }
 
-@media only screen and (max-width:720px){
+@media only screen and (max-width:770px){
     .plansection{
         margin-top:25%;
     }
@@ -555,12 +556,13 @@ display: block;
 width:20%;
 margin:5% 0% 5% 10%;
 .title{
-    font-size: 1.5em;
+    font-size: 2em;
     margin-bottom:20%;
 }
 
 .discription{
-    font-size:1em; 
+    font-size:1.5em; 
+    line-height:1.2;
 }
 
 @media only screen and (max-width:420px){
@@ -582,7 +584,7 @@ padding-left:8%;
 `
 export const QuickLink = styled.div`
 display:block;
-font-size:1em;
+font-size:1.5em;
 color:#fff;
 margin-top:10%;
 a{
@@ -601,7 +603,7 @@ a{
 export const ContactWapper =styled(AboutFooterWapper) `
 
 div {
-    font-size:1.2em;
+    font-size:1.5em;
     font-weight:700;
     margin-bottom:5%;
     .contactInfo {

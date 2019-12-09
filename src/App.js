@@ -18,7 +18,7 @@ function App() {
       <Header></Header>
       <Route path='/' exact component={AboutPage}></Route>
       <Route path='/product' exact component={ProductPage}></Route>
-      <Route path='/productDetail/:pid/:uid' exact component={ProductDetailInfo}></Route>
+      <Route path='/productDetail/:title/:pid/:uid' exact component={ProductDetailInfo}></Route>
       </div>
     </BrowserRouter>
     </Provider>

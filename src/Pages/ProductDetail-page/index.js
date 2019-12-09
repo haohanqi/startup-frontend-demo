@@ -7,20 +7,18 @@ import {getUserInfo,getProductInfo} from './store/actionCreator'
 class index extends Component {
 
     componentDidMount(){
-        const  {getProductInfo,target,getUserInfo,match} = this.props
-        //get product information by pid  
-        getProductInfo(target,match.params.pid)
+        const  {getProductInfo,getUserInfo,match} = this.props
+        //get product information by pid and title
+        getProductInfo(match.params.title,match.params.pid)
         //get user information by uid 
         getUserInfo(match.params.uid)
     }
     
     render() {
-        console.log(this.props)
         return (
             <div>
                <UserInfo />
-               <ProductDetailInfo />
-                
+               <ProductDetailInfo />    
             </div>
         );
     }

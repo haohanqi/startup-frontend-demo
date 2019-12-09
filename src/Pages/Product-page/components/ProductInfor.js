@@ -28,7 +28,7 @@ class ProductInfor extends Component {
 
     // according to target value(gold silver copper zinc) to render different product list
     renderProductList(target) {
-        const { Gold, Silver, Copper, Zinc,isLoading, } = this.props
+        const { Gold, Aluminum, Copper, Zinc,isLoading, } = this.props
         if (target === 'Gold' ) {
             if(isLoading){
                 return <Loading/>
@@ -45,14 +45,14 @@ class ProductInfor extends Component {
             }       
         }
         
-        if (target === 'Silver' ) {
+        if (target === 'Aluminum' ) {
             if(isLoading){
                 return <Loading/>
             }else{
                 return (
                     <FadeIn transitionDuration={600}>
                         {
-                            Silver.map((item) => {
+                            Aluminum.map((item) => {
                                 return this.productItem(item)
                              })  
                         }
@@ -61,7 +61,7 @@ class ProductInfor extends Component {
             }  
         }
 
-        if (target === 'Copper' ) {
+        if (target === 'Copper' && Copper.length>0 ) {
             if(isLoading){
                 return <Loading/>
             }else{
@@ -78,7 +78,7 @@ class ProductInfor extends Component {
             
        
         }
-        if (target === 'Zinc' ) {
+        if (target === 'Zinc' && Zinc.length>0 ) {
             if(isLoading){
                 return <Loading/>
             }else{
@@ -98,15 +98,15 @@ class ProductInfor extends Component {
     // each item in the product list 
     productItem(item) {
         return (
-            <Link to={'/productDetail/' + item.ID + '/' + item.postBy} style={{ textDecoration: 'none' }}>
+            <Link key={item._id} to={'/productDetail/' +item.title+'/'+ item._id + '/' + item.postBy} style={{ textDecoration: 'none' }}>
 
 
-                    <Product key={item.ID}>
+                    <Product >
                         <div className='productName'>Product: {item.title}</div>
                         <div className='ID'>Standard: <span>{item.standard}</span></div>
                         <div className='price'>Quality: <span> {item.quality}</span> </div>
                         <div className='quantity'>Quantity: <span> {item.quantity}</span> </div>
-                        <div className='location'> Location: <span>{item.location}</span> </div>
+                        <div className='location'> Status: <span>{item.contractStatus}</span> </div>
                     </Product>
 
             </Link> 
@@ -124,7 +124,7 @@ const mapStateToProps = (state) => {
         isLoading:state.get('product').get('isLoading'),
         target: state.get('product').get('target'),
         Gold: state.get('product').get('gold'),
-        Silver: state.get('product').get('silver'),
+        Aluminum: state.get('product').get('aluminum'),
         Copper: state.get('product').get('copper'),
         Zinc: state.get('product').get('zinc')
     }

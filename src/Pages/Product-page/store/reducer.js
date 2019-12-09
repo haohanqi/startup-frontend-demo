@@ -5,7 +5,7 @@ const defaultState=fromJS({
     showCata:false,
     target:" ",
     gold:[ ],
-    silver:[ ],
+    aluminum:[ ],
     copper:[ ],
     zinc:[ ],
     isLoading:false
@@ -21,8 +21,8 @@ export default(state=defaultState,action)=>{
       return state.set('gold',action.data)
     }
 
-    if(action.type===actionTypes.SET_SILVERINFO){
-      return state.set('silver',action.data)
+    if(action.type===actionTypes.SET_ALUMINUMINFO){
+      return state.set('aluminum',action.data)
     }
 
     if(action.type===actionTypes.SET_COPPERINFO){

@@ -13,18 +13,17 @@ class ProductDetailInfo extends Component {
 
     render() {
         const { productInfo } = this.props
-        console.log(productInfo)
         return (
             <ProductDetailWapper>
 
                 <ProductDetailHeader >
-                    <div className='productName'>Product:<span>{productInfo.product}</span></div>
+                    <div className='productName'>Product:<span>{productInfo.title}</span></div>
                     <div className='postBy' title='Click to see user information' onClick={this.handleClick}>
                         Post By:<span className='user'>User # {productInfo.postBy}</span>
                     </div>
 
                     <div className='type'>Type: <span>{productInfo.type}</span></div>
-                    <div className='contactStatus'> Contract Status: <span>{productInfo.status}</span></div>
+                    <div className='contactStatus'> Contract Status: <span>{productInfo.contractStatus}</span></div>
                 </ProductDetailHeader>
 
                 <ProductDetailInfoWapper>

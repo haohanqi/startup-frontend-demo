@@ -16,9 +16,9 @@ export const setuseridFocused=(data)=>{
 export const getUserInfo = (id) =>{
     console.log(id)
    return (dispatch)=>{
-    axios.get('/api/getUserInfo.json').then((res)=>{
-       // console.log(res.data.data)
-        dispatch(setUserInfo(res.data.data))
+    axios.get(`/api/users/${id}`).then((res)=>{
+        console.log(res.data)
+        dispatch(setUserInfo(res.data.user))
     }).catch((error)=>{console.log(error)})
    }
 }
@@ -46,9 +46,10 @@ const setProductInfo = (data) =>{
 export const getProductInfo =(target,id)=>{
     console.log('/'+target+'/'+id)
     return (dispatch) =>{
-        axios.get('/api/getProductInfo.json').then((res)=>{
-            console.log(res.data.data)
-            dispatch(setProductInfo(res.data.data))
+        console.log(target)
+        axios.get(`/api/products/${target}/${id}`).then((res)=>{
+            console.log(res.data)
+            dispatch(setProductInfo(res.data))
         }).catch(error=>{console.log(error)})
     }
 }

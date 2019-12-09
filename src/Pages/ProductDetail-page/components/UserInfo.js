@@ -8,17 +8,18 @@ class UserInfo extends Component {
 
     render() {
         const { focused, userInfo } = this.props;
+        console.log(userInfo)
 
         return (
 
             <UserInfoWapper className={focused ? '' : 'hidden'} >
-                <div className='userID'> User ID: <span>#5db09d062038a64ca5f070a8</span> </div>
+                <div className='userID'> User ID: <span>{userInfo._id}</span> </div>
 
                 <InfoWapper className='hidden'>
                     <div className='title'>Basic Information</div>
-                    <div className='companyName'>Company Name: <span>{userInfo.companyName}</span></div>
+                    <div className='companyName'>Company Name: <span>{userInfo.name}</span></div>
                     <div className='location'>Location: <span>{userInfo.location}</span> </div>
-                    <div className='web'>Company Website: <span>{userInfo.companyWebsite}</span> </div>
+                    <div className='web'>Company Website: <span>{userInfo.web}</span> </div>
                     <div className='product'>
                         Company Product:
                          {
@@ -31,7 +32,7 @@ class UserInfo extends Component {
 
                 <InfoWapper className='hidden'>
                     <div className='title'>Contact Information</div>
-                    <div className='phoneNumber'>Phone Number: <span>{userInfo.phoneNumber}</span></div>
+                    <div className='phoneNumber'>Phone Number: <span>{userInfo.phone}</span></div>
                     <div className='email'>Email:<span>{userInfo.email}</span> </div>
                     <div className='faxNumber'>Fax Number:<span>{userInfo.faxNumber}</span> </div>
                 </InfoWapper>

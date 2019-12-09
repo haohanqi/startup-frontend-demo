@@ -15,7 +15,7 @@ class Cata extends Component {
             <div onClick={this.handleCataShowUp}>CATAGORIES</div>
             <div className={this.props.showCata ? '':'hidden'}>     
                 <CataInfo className='gold' onClick={this.handleButtonClick}>Gold</CataInfo>
-                <CataInfo className='silver' onClick={this.handleButtonClick}>Silver</CataInfo>
+                <CataInfo className='silver' onClick={this.handleButtonClick}>Aluminum</CataInfo>
                 <CataInfo className='copper' onClick={this.handleButtonClick}>Copper</CataInfo>
                 <CataInfo className='zinc' onClick={this.handleButtonClick}>Zinc</CataInfo>    
             </div>
@@ -28,30 +28,42 @@ class Cata extends Component {
     //Click different catas, set differnet target. According to different target value, call each get method.
     handleButtonClick(e){
       
-      const {Gold,Silver,Copper,Zinc,setTarget,getInfo,setLoading}=this.props
+      const {Gold,Aluminum,Copper,Zinc,setTarget,getInfo,setLoading}=this.props
 
       //get target from cata's name
       const target = e.target.textContent 
       setTarget(e.target.textContent)
      
       //Only request getInfo at first time. If specific cata has already been request, no need to request agian. 
+      
       if(target === 'Gold' && Gold.size===0){   
         setLoading(true)
         getInfo(target)
+      }else{
+        setLoading(false)
       }
-      if(target === 'Silver'&& Silver.size===0){
+      
+      if(target === 'Aluminum' && Aluminum.size===0){
         setLoading(true)
         getInfo(target)
+      }else{
+        setLoading(false)
       }
+      
       if(target === 'Copper' && Copper.size===0){
-        console.log('copper')
         setLoading(true)
         getInfo(target)
+      }else{
+        setLoading(false)
       }
+      
       if(target === 'Zinc'&& Zinc.size===0){
         setLoading(true)
         getInfo(target)
+      }else{
+        setLoading(false)
       }
+    
     }
 
 
@@ -70,7 +82,7 @@ class Cata extends Component {
    return{
     isLoading:state.get('product').get('isLoading'),
     Gold:state.get('product').get('gold'),
-    Silver:state.get('product').get('silver'),
+    Aluminum:state.get('product').get('aluminum'),
     Copper:state.get('product').get('copper'),
     Zinc:state.get('product').get('zinc'),
     showCata:state.get('product').get('showCata')

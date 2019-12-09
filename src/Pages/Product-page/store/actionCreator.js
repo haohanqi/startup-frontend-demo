@@ -9,9 +9,9 @@ const setInfo = (data, target) => {
             data
         }
     }
-    if (target === "Silver") {
+    if (target === "Aluminum") {
         return {
-            type: actionTypes.SET_SILVERINFO,
+            type: actionTypes.SET_ALUMINUMINFO,
             data
         }
     }
@@ -31,21 +31,20 @@ const setInfo = (data, target) => {
 
 //common async get function to get differnt catas material according to target
 const asyncGet = (url, target, dispatch) => {
-    setTimeout(
-        ()=>{axios.get(url).then(
+    
+        axios.get(url).then(
             (res) => {
-                const data = res.data.data
+                const data = res.data
                 if(data){
                     dispatch(setInfo(data, target))
                     dispatch(setLoading(false))
                 }
-                
             }
         ).catch(
             (error) => {
                 console.log(error)
             }
-        )},2000)
+        )
     
 
 }
@@ -55,21 +54,21 @@ const asyncGet = (url, target, dispatch) => {
 export const getInfo = (target) => {
     return (dispatch) => {
 
-        if (target === "Gold") {
-            asyncGet('/api/getGoldInfo.json', target, dispatch)
-        }
+        // if (target === "Gold") {
+        //     asyncGet('/api/getGoldInfo.json', target, dispatch)
+        // }
 
-        if (target === 'Silver') {
-            asyncGet('/api/getSilverInfo.json', target, dispatch)
-        }
+        // if (target === 'Silver') {
+        //     asyncGet('/api/getSilverInfo.json', target, dispatch)
+        // }
+          
+            console.log(`/api/products/list/${target}`)
+            asyncGet(`/api/products/list/${target}`, target, dispatch)
+        
 
-        if (target === "Copper") {
-            asyncGet('/api/getCopperInfo.json', target, dispatch)
-        }
-
-        if (target === 'Zinc') {
-            asyncGet('/api/getZincInfo.json', target, dispatch)
-        }
+        // if (target === 'Zinc') {
+        //     asyncGet('/api/getZincInfo.json', target, dispatch)
+        // }
 
     }
 
